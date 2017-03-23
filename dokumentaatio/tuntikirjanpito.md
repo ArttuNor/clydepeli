@@ -4,3 +4,4 @@ P채iv채 | Tunnit | Kuvaus
 14.03.2017 | 1h | Aiheen suunnittelua ja repon luonti
 16.03.2017 | 1h | Lis채채 aiheen suunnittelua, dokumentaation aloittaminen
 22.03.2017 | 0.5h | Suunnittelua, kaavioiden valmistelua
+23.03.2017 | 3h | Koodin aloittaminen, ensimm꼒set testit, dokumentaation laajentaminen.

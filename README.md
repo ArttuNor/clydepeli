@@ -1,2 +1,5 @@
 # clydepeli
-A small game made for a course. A part of my studies.
+Clydepeli on vuoropohjainen taistelupeli. Siin„ valitaan ja k„ytet„„n hy”kk„yksi„.
+##Dokumentaatio
+[aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
+[tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
