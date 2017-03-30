@@ -31,7 +31,7 @@ public class Hahmo {
         this.hyokkaykset.add(h);
     }
     
-    public void kaytaHyokkaysta(int nro, Hahmo kohde){
+    public void kaytaHyokkaysta(int nro, Hahmo kohde) {
         this.hyokkaykset.get(nro).kayta(kohde);
     }
     
