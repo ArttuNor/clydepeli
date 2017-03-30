@@ -15,4 +15,4 @@ Jos aikaa jää, toteutetaan peliin myös moninpeli, jossa pelaajat valitsevat v
 * valikkojen hallinta
 * mahdollinen high score -tilastojen tarkastelu
 
-![Alt text](https://github.com/ArttuNor/miscfiles/blob/master/clydepeliluokkakaavio.png "Luokkakaavio")
+![Alt text](https://github.com/ArttuNor/miscfiles/blob/master/clydepeliluokkakaavio2.png "Luokkakaavio")
