@@ -7,3 +7,4 @@ Päivä | Tunnit | Kuvaus
 23.03.2017 | 3h | Koodin aloittaminen, ensimm„iset testit, dokumentaation laajentaminen.
 27.03.2017 | 0.5h | Lisää koodia ja testejä.
 29.03.2017 | 0.5h | Lisää koodia ja testejä.
+30.03.2017 | 2.5h | Koodia, testejä ja dokumentaation päivittämistä.
