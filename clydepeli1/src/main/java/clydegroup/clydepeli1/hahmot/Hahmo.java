@@ -19,6 +19,23 @@ public class Hahmo {
         this.vahvuudet = new ArrayList<>();
     }
 
+    public void menetaElamaa(int menetys) {
+        if (menetys > this.hp) {
+            this.hp = 0;
+        } else {
+            this.hp = this.hp - menetys;
+        }
+    }
+
+    public void opiHyokkays(Hyokkays h) {
+        this.hyokkaykset.add(h);
+    }
+    
+    public void kaytaHyokkaysta(int nro, Hahmo kohde){
+        this.hyokkaykset.get(nro).kayta(kohde);
+    }
+    
+    
     public List<String> getHeikkoudet() {
         return heikkoudet;
     }
@@ -57,22 +74,6 @@ public class Hahmo {
 
     public void setHyokkaykset(List<Hyokkays> hyokkaykset) {
         this.hyokkaykset = hyokkaykset;
-    }
-
-    public void menetaElamaa(int menetys) {
-        if (menetys > this.hp) {
-            this.hp = 0;
-        } else {
-            this.hp = this.hp - menetys;
-        }
-    }
-
-    public void opiHyokkays(Hyokkays h) {
-        this.hyokkaykset.add(h);
-    }
-    
-    public void kaytaHyokkaysta(int nro, Hahmo kohde){
-        this.hyokkaykset.get(nro).kayta(kohde);
     }
     
 }

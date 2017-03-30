@@ -4,7 +4,7 @@ public class Hyokkays {
 
     private String nimi;
     private int voima;
-    private String tyyppi;
+    private final String tyyppi;
 
     public Hyokkays(String nimi, int voima, String tyyppi) {
         this.nimi = nimi;

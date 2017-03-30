@@ -11,6 +11,9 @@ import static org.junit.Assert.*;
 
 public class HahmoTest {
 
+    List<Hyokkays> hyokkayslista = new ArrayList<>();
+    Hahmo h = new Hahmo("mauri", 3, hyokkayslista);
+
     public HahmoTest() {
     }
 
@@ -24,6 +27,7 @@ public class HahmoTest {
 
     @Before
     public void setUp() {
+        hyokkayslista.add(new Hyokkays("hyokkays1", 1, "oletus"));
     }
 
     @After
@@ -32,46 +36,26 @@ public class HahmoTest {
 
     @Test
     public void getHyokkayslistaToimii() {
-        List<Hyokkays> hyokkayslista = new ArrayList<>();
-        hyokkayslista.add(new Hyokkays("hyokkays1", 1, "oletus"));
-        Hahmo h = new Hahmo("mauri", 3, hyokkayslista);
-
         assertEquals(hyokkayslista, h.getHyokkaykset());
     }
 
     @Test
     public void konstruktoriAsettaaNimenOikein() {
-        List<Hyokkays> hyokkayslista = new ArrayList<>();
-        hyokkayslista.add(new Hyokkays("hyokkays1", 1, "oletus"));
-        Hahmo h = new Hahmo("mauri", 3, hyokkayslista);
-
         assertEquals("mauri", h.getNimi());
     }
 
     @Test
     public void konstruktoriAsettaaHpnOikein() {
-        List<Hyokkays> hyokkayslista = new ArrayList<>();
-        hyokkayslista.add(new Hyokkays("hyokkays1", 1, "oletus"));
-        Hahmo h = new Hahmo("mauri", 3, hyokkayslista);
-
         assertEquals(3, h.getHp());
     }
 
     @Test
     public void konstruktoriAsettaaHyokkayksetOikein() {
-        List<Hyokkays> hyokkayslista = new ArrayList<>();
-        hyokkayslista.add(new Hyokkays("hyokkays1", 1, "oletus"));
-        Hahmo h = new Hahmo("mauri", 3, hyokkayslista);
-
         assertEquals(hyokkayslista, h.getHyokkaykset());
     }
 
     @Test
     public void menetaElamaaVahentaaOikeanMaaran() {
-        List<Hyokkays> hyokkayslista = new ArrayList<>();
-        hyokkayslista.add(new Hyokkays("hyokkays1", 1, "oletus"));
-        Hahmo h = new Hahmo("mauri", 3, hyokkayslista);
-
         h.menetaElamaa(1);
         assertEquals(2, h.getHp());
 
@@ -79,10 +63,6 @@ public class HahmoTest {
 
     @Test
     public void menetaElamaaEiVahennaAlleNollan() {
-        List<Hyokkays> hyokkayslista = new ArrayList<>();
-        hyokkayslista.add(new Hyokkays("hyokkays1", 1, "oletus"));
-        Hahmo h = new Hahmo("mauri", 3, hyokkayslista);
-
         h.menetaElamaa(5);
         assertEquals(0, h.getHp());
 
@@ -90,26 +70,20 @@ public class HahmoTest {
 
     @Test
     public void opiHyokkaysLisaaHyokkayksen() {
-        List<Hyokkays> hyokkayslista = new ArrayList<>();
-        hyokkayslista.add(new Hyokkays("hyokkays1", 1, "oletus"));
-        Hahmo h = new Hahmo("mauri", 3, hyokkayslista);
-
         Hyokkays hyokkays2 = new Hyokkays("hyokkays2", 3, "oletus");
         h.opiHyokkays(hyokkays2);
         hyokkayslista.add(hyokkays2);
 
         assertEquals(hyokkayslista, h.getHyokkaykset());
     }
-    
+
     @Test
     public void kaytaHyokkaystaVahentaaKohteenElamaa() {
-        List<Hyokkays> hyokkayslista = new ArrayList<>();
-        hyokkayslista.add(new Hyokkays("hyokkays1", 1, "oletus"));
         Hahmo hyokkaaja = new Hahmo("mauri", 3, hyokkayslista);
         Hahmo hyokattava = new Hahmo("pekko", 3, hyokkayslista);
-        
+
         hyokkaaja.kaytaHyokkaysta(0, hyokattava);
-        
-        assertEquals (2, hyokattava.getHp());
+
+        assertEquals(2, hyokattava.getHp());
     }
 }
