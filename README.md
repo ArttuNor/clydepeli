@@ -5,6 +5,6 @@ Clydepeli on vuoropohjainen taistelupeli. Siinä valitaan ja käytetään hyökk
 
 [tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
 
-[pit-raportti](https://github.com/ArttuNor/clydepeli/blob/master/dokumentaatio/pit/201703301549/index.html)
+[pit-raportti](https://htmlpreview.github.io/?https://github.com/ArttuNor/clydepeli/blob/master/dokumentaatio/pit/201704062232/index.html)
 
-[checkstyle-raportti](https://github.com/ArttuNor/clydepeli/blob/master/dokumentaatio/checkstyle/checkstyle.html)
+[checkstyle-raportti](https://htmlpreview.github.io/?https://github.com/ArttuNor/clydepeli/blob/master/dokumentaatio/checkstyle/checkstyle.html)
