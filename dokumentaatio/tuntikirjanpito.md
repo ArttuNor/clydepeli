@@ -8,3 +8,4 @@ Päivä | Tunnit | Kuvaus
 27.03.2017 | 0.5h | Lisää koodia ja testejä.
 29.03.2017 | 0.5h | Lisää koodia ja testejä.
 30.03.2017 | 2.5h | Koodia, testejä ja dokumentaation päivittämistä.
+06.04.2017 | 5h | Koodia (käyttöliittymä aluille) sekä JavaDocien aloitus. Raporttien päivittämistä.
