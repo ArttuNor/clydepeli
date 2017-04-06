@@ -1,17 +1,37 @@
 package clydegroup.clydepeli1.hahmot;
 
+/**
+ *
+ * Luokka, jonka olioita Hahmot kutsuvat vaikuttaakseen toisiinsa.
+ * 
+ * @author Arttu
+ */
 public class Hyokkays {
 
     private String nimi;
     private int voima;
     private final String tyyppi;
 
+    /**
+     * Luo uuden Hyokkays-olion.
+     * 
+     * @param nimi
+     * @param voima
+     * @param tyyppi
+     */
     public Hyokkays(String nimi, int voima, String tyyppi) {
         this.nimi = nimi;
         this.voima = voima;
         this.tyyppi = tyyppi;
     }
 
+    /**
+     *
+     * Vahentaa parametrina annetun hahmon h elämää sen heikkouksien
+     * ja hyökkäyksen tyypin perusteella.
+     * 
+     * @param h
+     */
     public void kayta(Hahmo h) {
         int tehtyVahinko = this.voima;
 
@@ -34,18 +54,34 @@ public class Hyokkays {
         h.menetaElamaa(tehtyVahinko);
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNimi() {
         return nimi;
     }
 
+    /**
+     *
+     * @param nimi
+     */
     public void setNimi(String nimi) {
         this.nimi = nimi;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getVoima() {
         return voima;
     }
 
+    /**
+     *
+     * @param voima
+     */
     public void setVoima(int voima) {
         this.voima = voima;
     }

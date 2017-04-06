@@ -34,6 +34,14 @@
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>1.1.8</version>
+                <configuration>
+                    <targetClasses>
+                        <param>clydegroup.clydepeli1.hahmot*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>clydegroup.clydepeli1.hahmot*</param>
+                    </targetTests>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
