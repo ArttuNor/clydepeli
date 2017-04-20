@@ -8,7 +8,7 @@ import java.util.Random;
  * @author Arttu
  */
 public class Taistelu {
-
+    
     private final Hahmo pelaaja;
     private Hahmo vihollinen;
     private int voitot;
@@ -16,7 +16,7 @@ public class Taistelu {
     /**
      *
      * Luo taisteluolion.
-     * 
+     *
      * @param pelaaja
      * @param vihollinen
      * @param voitot
@@ -29,12 +29,12 @@ public class Taistelu {
 
     /**
      *
-     * Metodi toimii taistelutilanteen peruslooppina. Se kysyy käyttäjältä,
-     * mitä hyökkäystä käytetään (kesken), jonka jälkeen se tarkistaa, onko
+     * Metodi toimii taistelutilanteen peruslooppina. Se kysyy käyttäjältä, mitä
+     * hyökkäystä käytetään (kesken), jonka jälkeen se tarkistaa, onko
      * vihollisella hp jäljellä. Jos ei, siirrytään pois loopista seuraavaan
      * taisteluun. Jos on, vihollinen hyökkää. Jos käyttäjällä on tämän jälkeen
      * hp, taisto jatkuu. Muuten peli päättyy. (Kesken.)
-     * 
+     *
      */
     public void aloita() {
         while (true) {
@@ -48,15 +48,15 @@ public class Taistelu {
                 Taistelu seuraava = new Taistelu(pelaaja, pelaaja, voitot);
                 seuraava.aloita();
             }
-
-            Random random = new Random();
-            vihollinen.kaytaHyokkaysta(random.nextInt
-        (vihollinen.getHyokkaykset().size())-1, pelaaja);
             
-            if(pelaaja.getHp()<1){
+            Random random = new Random();
+            vihollinen.kaytaHyokkaysta(random.nextInt(vihollinen.getHyokkaykset().size()) - 1, pelaaja);
+            
+            if (pelaaja.getHp() < 1) {
                 // Kerro pelin päättyneen ja palaa valikkoon.
+                System.exit(0);
             }
         }
     }
-
+    
 }

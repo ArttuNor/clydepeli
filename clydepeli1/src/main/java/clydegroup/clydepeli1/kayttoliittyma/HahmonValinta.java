@@ -49,8 +49,8 @@ public class HahmonValinta implements ActionListener, Runnable {
 
         //Seuraavaksi jatkan tästä: lisään nappeihin toiminnallisuuden, ja vien
         //pelaajan valitseman hahmon taisteluun.
-        List<Hahmo> Hahmot = hahmojenLuonti();
-        for (Hahmo h : Hahmot) {
+        List<Hahmo> hahmot = hahmojenLuonti();
+        for (Hahmo h : hahmot) {
             container.add(new JButton(h.getNimi()));
         }
 

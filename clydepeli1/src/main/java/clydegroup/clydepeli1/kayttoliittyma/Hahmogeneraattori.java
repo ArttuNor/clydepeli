@@ -1,4 +1,3 @@
-
 package clydegroup.clydepeli1.kayttoliittyma;
 
 import clydegroup.clydepeli1.hahmot.Hahmo;
@@ -11,12 +10,13 @@ import java.util.List;
  * @author Arttu
  */
 public class Hahmogeneraattori {
+
     private final List<Hahmo> lista;
 
     /**
      *
      * Metodi luo uuden Hahmogeneraattorin.
-     * 
+     *
      */
     public Hahmogeneraattori() {
         this.lista = new ArrayList<>();
@@ -25,38 +25,38 @@ public class Hahmogeneraattori {
     /**
      *
      * Metodi lisää generaattorin listalle hahmoja. Tämä metodi on
-     * aikataulusyistä aika kamala ja täynnä kovakoodattua hömppää.
-     * Siistin sen alkavalla viikolla.
-     * 
+     * aikataulusyistä aika kamala ja täynnä kovakoodattua hömppää. Siistin sen
+     * alkavalla viikolla.
+     *
      */
-    public void luoHahmot(){
+    public void luoHahmot() {
         Hyokkays solvaus = new Hyokkays("Solvaus", 2, "henkilokohtaisuus");
         Hyokkays rationalisointi = new Hyokkays("Rationalisointi", 3,
                 "valelogiikka");
         Hyokkays asiantuntemus = new Hyokkays("Oma asiantuntemus", 2, "ego");
         Hyokkays lapset = new Hyokkays("Entä lapset!?", 3, "tunteet");
-        Hyokkays klassikko = new Hyokkays ("Klassinen trolli", 1, "trolli");
-        
+        Hyokkays klassikko = new Hyokkays("Klassinen trolli", 1, "trolli");
+
         //Jantsu
         List jantsuniskut = new ArrayList<>();
         jantsuniskut.add(rationalisointi);
         jantsuniskut.add(klassikko);
-        
+
         List jantsunheikkoudet = new ArrayList<>();
         jantsunheikkoudet.add("rationalisointi");
         jantsunheikkoudet.add("ego");
 
         List jantsunvahvuudet = new ArrayList<>();
         jantsunvahvuudet.add("tunteet");
-        
+
         Hahmo jantsu = new Hahmo("Jantsu", 7, jantsuniskut, jantsunvahvuudet,
-        jantsunheikkoudet);
-        
+                jantsunheikkoudet);
+
         //Kukkis
         List kukkikseniskut = new ArrayList<>();
         kukkikseniskut.add(solvaus);
         kukkikseniskut.add(lapset);
-        
+
         List kukkiksenheikkoudet = new ArrayList<>();
         kukkiksenheikkoudet.add("henkilökohtaisuus");
         kukkiksenheikkoudet.add("trolli");
@@ -65,25 +65,25 @@ public class Hahmogeneraattori {
         List kukkiksenvahvuudet = new ArrayList<>();
         kukkiksenvahvuudet.add("rationalisointi");
         kukkiksenvahvuudet.add("ego");
-        
+
         Hahmo kukkis = new Hahmo("Kukkis", 5, kukkikseniskut,
                 kukkiksenheikkoudet, kukkiksenvahvuudet);
-        
+
         //Dosentti
         List dosentiniskut = new ArrayList<>();
         dosentiniskut.add(rationalisointi);
         dosentiniskut.add(asiantuntemus);
-        
+
         List dosentinheikkoudet = new ArrayList<>();
         dosentinheikkoudet.add("henkilökohtaisuus");
         dosentinheikkoudet.add("ego");
 
         List dosentinvahvuudet = new ArrayList<>();
         dosentinvahvuudet.add("rationalisointi");
-        
+
         Hahmo dosentti = new Hahmo("Dosentti", 5, dosentiniskut,
                 dosentinheikkoudet, dosentinvahvuudet);
-        
+
         this.lista.add(jantsu);
         this.lista.add(kukkis);
         this.lista.add(dosentti);
@@ -96,5 +96,5 @@ public class Hahmogeneraattori {
     public List<Hahmo> getLista() {
         return lista;
     }
-    
+
 }

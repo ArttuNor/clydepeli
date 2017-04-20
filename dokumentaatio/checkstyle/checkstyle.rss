@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017</copyright>
     <item>
-      <title>File: 4,
+      <title>File: 9,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -44,6 +44,20 @@ under the License.
             </tr>
           </thead>
           <tbody>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.kayttoliittyma.HahmonValinta.java">clydegroup/clydepeli1/kayttoliittyma/HahmonValinta.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.main.Main.java">clydegroup/clydepeli1/main/Main.java</a>
@@ -74,6 +88,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.kayttoliittyma.Hahmogeneraattori.java">clydegroup/clydepeli1/kayttoliittyma/Hahmogeneraattori.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.hahmot.Hyokkays.java">clydegroup/clydepeli1/hahmot/Hyokkays.java</a>
                 </td>
                 <td>
@@ -88,7 +116,49 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.kayttoliittyma.Ohjeidenantaja.java">clydegroup/clydepeli1/kayttoliittyma/Ohjeidenantaja.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.hahmot.Hahmo.java">clydegroup/clydepeli1/hahmot/Hahmo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.kayttoliittyma.Lopettaja.java">clydegroup/clydepeli1/kayttoliittyma/Lopettaja.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.taistelu.Taistelu.java">clydegroup/clydepeli1/taistelu/Taistelu.java</a>
                 </td>
                 <td>
                   0
