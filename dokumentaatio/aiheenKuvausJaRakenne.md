@@ -17,3 +17,5 @@ Jos aikaa jää, toteutetaan peliin myös moninpeli, jossa pelaajat valitsevat v
 * mahdollinen high score -tilastojen tarkastelu
 
 ![Alt text](https://github.com/ArttuNor/miscfiles/blob/master/clydepeliluokkakaavio2.jpg "Luokkakaavio")
+![Alt text](https://github.com/ArttuNor/miscfiles/blob/master/clydepelisekvenssikaavio1.jpg "Sekvenssikaavio 1: Uuden pelin aloittaminen")
+![Alt text](https://github.com/ArttuNor/miscfiles/blob/master/clydepelisekvenssikaavio2.jpg "Sekvenssikaavio 2: Ohjeiden lukeminen")
