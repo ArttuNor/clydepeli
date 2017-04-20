@@ -7,7 +7,7 @@ import java.util.List;
  *
  * Luokka, jonka olioista pelaajahahmo ja viholliset muodostuvat. Vaikuttavat
  * toisiinsa luokan Hyokkays kautta.
- * 
+ *
  * @author Arttu
  */
 public class Hahmo {
@@ -21,22 +21,24 @@ public class Hahmo {
     /**
      *
      * Luo hahmon.
-     * 
+     *
      * @param nimi
      * @param hp
      * @param hyokkaykset
+     * @param heikkoudet
+     * @param vahvuudet
      */
-    public Hahmo(String nimi, int hp, List<Hyokkays> hyokkaykset) {
+    public Hahmo(String nimi, int hp, List<Hyokkays> hyokkaykset, List<String> heikkoudet, List<String> vahvuudet) {
         this.nimi = nimi;
         this.hp = hp;
         this.hyokkaykset = hyokkaykset;
-        this.heikkoudet = new ArrayList<>();
-        this.vahvuudet = new ArrayList<>();
+        this.heikkoudet = heikkoudet;
+        this.vahvuudet = vahvuudet;
     }
 
     /**
      * Hahmo menettää elämää parametrin menetys mukaan.
-     * 
+     *
      * @param menetys
      */
     public void menetaElamaa(int menetys) {
@@ -50,26 +52,26 @@ public class Hahmo {
     /**
      *
      * Lisää hahmon hyökkäyksiin parametrina annetun hyökkäyksen.
-     * 
+     *
      * @param h
      */
     public void opiHyokkays(Hyokkays h) {
         this.hyokkaykset.add(h);
     }
-    
+
     /**
      *
      * Hahmo kutsuu sille tallennetuista hyökkäyksistä numeroltaan parametria
      * nro vastaavan hyökkäyksen metodia kayta() ja antaa sille parameriksi
      * Hahmon kohde.
-     * 
+     *
      * @param nro
      * @param kohde
      */
     public void kaytaHyokkaysta(int nro, Hahmo kohde) {
         this.hyokkaykset.get(nro).kayta(kohde);
     }
-    
+
     /**
      *
      * @return
@@ -101,7 +103,7 @@ public class Hahmo {
     public void setVahvuudet(List<String> vahvuudet) {
         this.vahvuudet = vahvuudet;
     }
-    
+
     /**
      *
      * @return
@@ -149,5 +151,5 @@ public class Hahmo {
     public void setHyokkaykset(List<Hyokkays> hyokkaykset) {
         this.hyokkaykset = hyokkaykset;
     }
-    
+
 }

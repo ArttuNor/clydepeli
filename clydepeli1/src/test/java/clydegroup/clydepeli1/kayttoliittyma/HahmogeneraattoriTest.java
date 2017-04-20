@@ -7,9 +7,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class KayttoliittymaTest {
+public class HahmogeneraattoriTest {
     
-    public KayttoliittymaTest() {
+    public HahmogeneraattoriTest() {
     }
     
     @BeforeClass
@@ -27,5 +27,9 @@ public class KayttoliittymaTest {
     @After
     public void tearDown() {
     }
+    
+    //Luokka on pelkkä placeholder, johtuen varsinaisen Hahmogeneraattori-luokan
+    //karkeudesta. Mitäpä minä rajattua aikaani käyttäisin kovakoodatun ja
+    //keskeneräisen luokan testaamiseen...
 
 }

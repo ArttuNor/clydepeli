@@ -12,7 +12,9 @@ import static org.junit.Assert.*;
 public class HahmoTest {
 
     List<Hyokkays> hyokkayslista = new ArrayList<>();
-    Hahmo h = new Hahmo("mauri", 3, hyokkayslista);
+    List<String> heikkouslista = new ArrayList<>();
+    List<String> vahvuuslista = new ArrayList<>();
+    Hahmo h = new Hahmo("mauri", 3, hyokkayslista, heikkouslista, vahvuuslista);
 
     public HahmoTest() {
     }
@@ -79,8 +81,10 @@ public class HahmoTest {
 
     @Test
     public void kaytaHyokkaystaVahentaaKohteenElamaa() {
-        Hahmo hyokkaaja = new Hahmo("mauri", 3, hyokkayslista);
-        Hahmo hyokattava = new Hahmo("pekko", 3, hyokkayslista);
+        Hahmo hyokkaaja = new Hahmo("mauri", 3, hyokkayslista, heikkouslista,
+        vahvuuslista);
+        Hahmo hyokattava = new Hahmo("pekko", 3, hyokkayslista, heikkouslista,
+        vahvuuslista);
 
         hyokkaaja.kaytaHyokkaysta(0, hyokattava);
 

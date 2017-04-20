@@ -15,7 +15,10 @@ public class HyokkaysTest {
     }
     Hyokkays h = new Hyokkays("suora", 1, "oletus");
     List<Hyokkays> hyokkayslista = new ArrayList<>();
-    Hahmo hahmo = new Hahmo("mauri", 3, hyokkayslista);
+    List<String> heikkouslista = new ArrayList<>();
+    List<String> vahvuuslista = new ArrayList<>();
+    Hahmo hahmo = new Hahmo("mauri", 3, hyokkayslista, heikkouslista,
+    vahvuuslista);
 
     @BeforeClass
     public static void setUpClass() {

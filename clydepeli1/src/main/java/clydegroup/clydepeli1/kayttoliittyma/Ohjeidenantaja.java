@@ -4,28 +4,29 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 
 /**
  *
  * @author Arttu
  */
-public class Kayttoliittyma implements Runnable {
+public class Ohjeidenantaja implements ActionListener, Runnable {
 
     private JFrame frame;
 
-    /**
-     *
-     */
-    public Kayttoliittyma() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        this.run();
     }
 
     @Override
     public void run() {
-        frame = new JFrame("Clydepeli");
+        frame = new JFrame("Clydepeli - ohjeet");
         frame.setPreferredSize(new Dimension(400, 300));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -39,26 +40,15 @@ public class Kayttoliittyma implements Runnable {
     private void luoKomponentit(Container container) {
         container.setLayout(new BorderLayout());
 
-        JButton aloitusNappi = new JButton("Aloita peli");
-        container.add(aloitusNappi, BorderLayout.NORTH);
-        aloitusNappi.addActionListener(new HahmonValinta());
+        JLabel teksti = new JLabel("Clydepelissä tarkoituksesi on voittaa vihollisia.");
+        container.add(teksti);
 
-        JButton ohjeetNappi = new JButton("Ohjeet");
-        container.add(ohjeetNappi);
-        ohjeetNappi.addActionListener(new Ohjeidenantaja());
-
-        JButton lopetaNappi = new JButton("Lopeta peli");
-        container.add(lopetaNappi, BorderLayout.SOUTH);
-        lopetaNappi.addActionListener(new Lopettaja());
-
-    }
-
-    /**
-     *
-     * @return
-     */
-    public JFrame getFrame() {
-        return frame;
+        container.add(new JButton(new AbstractAction("Takaisin") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+            }
+        }), BorderLayout.SOUTH);
     }
 
 }
