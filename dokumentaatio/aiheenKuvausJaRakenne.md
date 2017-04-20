@@ -1,4 +1,4 @@
-**Aihe:** Vuoropohjainen roolipeli Toteutetaan pienimuotoinen peli, jossa pelaaja valitsee eri vaihtoehdoista erilaisia "hyökkäyksiä", ja pyrkii siten voittamaan vastustajia. Vastustajia tulee vastaan niin kauan kuin pelaaja selviää.
+**Aihe:** Vuoropohjainen roolipeli Toteutetaan pienimuotoinen peli, jossa pelaaja valitsee eri vaihtoehdoista erilaisia "hyökkäyksiä", ja pyrkii siten voittamaan vastustajia. Vastustajia tulee vastaan niin kauan kuin pelaaja selviää. Eri "hyökkäyksillä" on erilaisia ominaisuuksia, ja hahmoilla saattaa olla heikkous tai vahvuus näille ominaisuuksille.
 
 Peliin toteutetaan high score -lista ja sisäinen kauppa, josta voi ostaa esineitä taisteluiden välissä, jos se on kurssin laajuuden kannalta mielekästä. Pelin ulkoasu riippuu myös käytettävissä olevasta ajasta. Tarvittaessa peli voi toimia pelkän tekstin varassa.
 
@@ -8,6 +8,7 @@ Jos aikaa jää, toteutetaan peliin myös moninpeli, jossa pelaajat valitsevat v
 
 **Kaikkien käyttäjien toiminnot:**
 
+* hahmon valinta
 * itse pelitilanne, eli "hyökkäyksien" valitseminen
 
 **Pelaajan 1 toiminnot:**
