@@ -1,6 +1,6 @@
 package clydegroup.clydepeli1.main;
 
-import clydegroup.clydepeli1.kayttoliittyma.Kayttoliittyma;
+import clydegroup.clydepeli1.kayttoliittyma.AloitusGUI;
 import javax.swing.SwingUtilities;
 
 /**
@@ -14,7 +14,7 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma();
+        AloitusGUI kayttoliittyma = new AloitusGUI();
         SwingUtilities.invokeLater(kayttoliittyma);
         
     }

@@ -1,5 +1,6 @@
 package clydegroup.clydepeli1.kayttoliittyma;
 
+import clydegroup.clydepeli1.logiikka.Hahmogeneraattori;
 import clydegroup.clydepeli1.hahmot.Hahmo;
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -18,14 +19,9 @@ import javax.swing.WindowConstants;
  *
  * @author Arttu
  */
-public class HahmonValinta implements ActionListener, Runnable {
+public class HahmonValintaGUI implements Runnable {
 
     private JFrame frame;
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        this.run();
-    }
 
     @Override
     public void run() {
@@ -51,8 +47,13 @@ public class HahmonValinta implements ActionListener, Runnable {
         //pelaajan valitseman hahmon taisteluun.
         List<Hahmo> hahmot = hahmojenLuonti();
         for (Hahmo h : hahmot) {
-            container.add(new JButton(h.getNimi()));
+            JButton lisattava = new JButton(h.getNimi());
+            container.add(lisattava);
+            lisattava.addActionListener(new HahmonValintaListener(this.frame,
+            h));
         }
+        
+        container.add(new JLabel(""));
 
         container.add(new JButton(new AbstractAction("Takaisin") {
             @Override

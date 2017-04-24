@@ -1,4 +1,4 @@
-package clydegroup.clydepeli1.kayttoliittyma;
+package clydegroup.clydepeli1.logiikka;
 
 import clydegroup.clydepeli1.hahmot.Hahmo;
 import clydegroup.clydepeli1.hahmot.Hyokkays;
@@ -49,7 +49,7 @@ public class Hahmogeneraattori {
         List jantsunvahvuudet = new ArrayList<>();
         jantsunvahvuudet.add("tunteet");
 
-        Hahmo jantsu = new Hahmo("Jantsu", 7, jantsuniskut, jantsunvahvuudet,
+        Hahmo jantsu = new Hahmo("Jantsu", 17, jantsuniskut, jantsunvahvuudet,
                 jantsunheikkoudet);
 
         //Kukkis
@@ -63,10 +63,10 @@ public class Hahmogeneraattori {
         kukkiksenheikkoudet.add("tunteet");
 
         List kukkiksenvahvuudet = new ArrayList<>();
-        kukkiksenvahvuudet.add("rationalisointi");
+        kukkiksenvahvuudet.add("valelogiikka");
         kukkiksenvahvuudet.add("ego");
 
-        Hahmo kukkis = new Hahmo("Kukkis", 5, kukkikseniskut,
+        Hahmo kukkis = new Hahmo("Kukkis", 13, kukkikseniskut,
                 kukkiksenheikkoudet, kukkiksenvahvuudet);
 
         //Dosentti
@@ -79,9 +79,9 @@ public class Hahmogeneraattori {
         dosentinheikkoudet.add("ego");
 
         List dosentinvahvuudet = new ArrayList<>();
-        dosentinvahvuudet.add("rationalisointi");
+        dosentinvahvuudet.add("valelogiikka");
 
-        Hahmo dosentti = new Hahmo("Dosentti", 5, dosentiniskut,
+        Hahmo dosentti = new Hahmo("Dosentti", 15, dosentiniskut,
                 dosentinheikkoudet, dosentinvahvuudet);
 
         this.lista.add(jantsu);

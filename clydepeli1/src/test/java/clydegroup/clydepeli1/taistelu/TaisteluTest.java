@@ -1,7 +1,9 @@
 package clydegroup.clydepeli1.taistelu;
 
+import clydegroup.clydepeli1.logiikka.Taistelu;
 import clydegroup.clydepeli1.hahmot.Hahmo;
 import clydegroup.clydepeli1.hahmot.Hyokkays;
+import clydegroup.clydepeli1.kayttoliittyma.TaisteluGUI;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
@@ -24,7 +26,8 @@ public class TaisteluTest {
             vahvuuslista);
     Hahmo vihollinen = new Hahmo("pekka", 3, hyokkayslista, heikkouslista,
             vahvuuslista);
-    Taistelu taistelu = new Taistelu(pelaaja, vihollinen, 0);
+    Taistelu taistelu = new Taistelu(pelaaja, vihollinen,
+            0, new TaisteluGUI(pelaaja, 0));
 
     public TaisteluTest() {
     }
