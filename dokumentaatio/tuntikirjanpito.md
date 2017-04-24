@@ -12,3 +12,4 @@ Päivä | Tunnit | Kuvaus
 18.04.2017 | 1h | Koodia, käyttöliittymän kanssa säätämistä.
 19.04.2017 | 2h | Lisää taistelua käyttöliittymän kanssa, taistelulogiikka alulle.
 20.04.2017 | 5h | Käyttöliittymän ja taistelulogiikan ehostamista. Testien kirjoittamista, raporttien laatimista.
+24.04.2017 | 3h | Taistelulogiikan ja käyttöliittymien ehostamista, luokkien uudelleenjärjestelyä.
