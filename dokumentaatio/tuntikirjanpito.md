@@ -13,3 +13,4 @@ Päivä | Tunnit | Kuvaus
 19.04.2017 | 2h | Lisää taistelua käyttöliittymän kanssa, taistelulogiikka alulle.
 20.04.2017 | 5h | Käyttöliittymän ja taistelulogiikan ehostamista. Testien kirjoittamista, raporttien laatimista.
 24.04.2017 | 3h | Taistelulogiikan ja käyttöliittymien ehostamista, luokkien uudelleenjärjestelyä.
+25.04.2017 | 1h | Vihollisgeneraattorin koodaaminen.
