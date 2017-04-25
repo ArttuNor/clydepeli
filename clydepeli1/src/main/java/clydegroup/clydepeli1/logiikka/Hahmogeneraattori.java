@@ -4,6 +4,7 @@ import clydegroup.clydepeli1.hahmot.Hahmo;
 import clydegroup.clydepeli1.hahmot.Hyokkays;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -12,6 +13,7 @@ import java.util.List;
 public class Hahmogeneraattori {
 
     private final List<Hahmo> lista;
+    private final List<Hahmo> vihulista;
 
     /**
      *
@@ -20,6 +22,7 @@ public class Hahmogeneraattori {
      */
     public Hahmogeneraattori() {
         this.lista = new ArrayList<>();
+        this.vihulista = new ArrayList<>();
     }
 
     /**
@@ -89,12 +92,77 @@ public class Hahmogeneraattori {
         this.lista.add(dosentti);
     }
 
+    public void luoVihut() {
+        Hyokkays klassikko = new Hyokkays("Klassinen trolli", 1, "trolli");
+        
+        Hyokkays aitis = new Hyokkays("Äitis on!", 1, "henkilokohtaisuus");
+        Hyokkays laskukaava = new Hyokkays("Tarpeeton laskukaava", 1,
+                "valelogiikka");
+        Hyokkays isanKaveri = new Hyokkays("Mun isän kaveri on töissä...",
+                2, "ego");
+        Hyokkays pahaMieli = new Hyokkays("Nyt minun tuli paha mieli...",
+                3, "tunteet");
+
+        //Pikku-Pena
+        List penaniskut = new ArrayList<>();
+        penaniskut.add(aitis);
+        penaniskut.add(isanKaveri);
+
+        List penanheikkoudet = new ArrayList<>();
+        penanheikkoudet.add("valelogiikka");
+        penanheikkoudet.add("ego");
+
+        List penanvahvuudet = new ArrayList<>();
+        penanvahvuudet.add("henkilökohtaisuus");
+        penanvahvuudet.add("tunteet");
+
+        Hahmo pena = new Hahmo("Pikku-Pena", 4, penaniskut,
+                penanheikkoudet, penanvahvuudet);
+        
+        //Mielensäpahoittaja
+        List mpniskut = new ArrayList<>();
+        mpniskut.add(pahaMieli);
+
+        List mpnheikkoudet = new ArrayList<>();
+        List mpnvahvuudet = new ArrayList<>();
+        mpnvahvuudet.add("ego");
+
+        Hahmo mielensapahoittaja = new Hahmo("Mielensäpahoittaja", 4, mpniskut,
+                mpnheikkoudet, mpnvahvuudet);
+        
+        //"Nuori nero"
+        List neroniskut = new ArrayList<>();
+        neroniskut.add(laskukaava);
+        neroniskut.add(klassikko);
+
+        List neronheikkoudet = new ArrayList<>();
+        neronheikkoudet.add("henkilökohtaisuus");
+        neronheikkoudet.add("trolli");
+        neronheikkoudet.add("tunteet");
+
+        List neronvahvuudet = new ArrayList<>();
+        neronvahvuudet.add("valelogiikka");
+        
+        Hahmo nuoriNero = new Hahmo("\"Nuori nero\"", 4, neroniskut,
+                neronheikkoudet, neronvahvuudet);
+        
+        this.vihulista.add(pena);
+        this.vihulista.add(mielensapahoittaja);
+        this.vihulista.add(nuoriNero);
+    }
+
     /**
      *
      * @return
      */
     public List<Hahmo> getLista() {
         return lista;
+    }
+    
+    public Hahmo arvoVihu() {
+        Random random = new Random();
+        luoVihut();
+        return this.vihulista.get(random.nextInt(2));
     }
 
 }

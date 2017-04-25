@@ -43,7 +43,7 @@ public class Hyokkays {
 
         for (String vahvuus : h.getVahvuudet()) {
             if (this.tyyppi.equals(vahvuus)) {
-                if ((tehtyVahinko - 2) > -1) {
+                if (tehtyVahinko - 2 >= 0) {
                     tehtyVahinko = tehtyVahinko - 2;
                 } else {
                     tehtyVahinko = 0;

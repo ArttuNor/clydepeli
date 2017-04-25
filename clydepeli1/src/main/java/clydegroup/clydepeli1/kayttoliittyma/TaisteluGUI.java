@@ -28,7 +28,9 @@ public class TaisteluGUI implements Runnable {
     private JLabel infoboksi = new JLabel("");
 
     public TaisteluGUI(Hahmo valittuHahmo, int voitot) {
-        this.taistelu = new Taistelu(valittuHahmo, valittuHahmo, voitot, this);
+        Hahmogeneraattori hg = new Hahmogeneraattori();
+        this.taistelu = new Taistelu(valittuHahmo, hg.arvoVihu(), voitot, this);
+        
 
     }
 
