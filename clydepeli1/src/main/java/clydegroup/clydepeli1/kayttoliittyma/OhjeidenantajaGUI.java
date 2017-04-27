@@ -15,6 +15,8 @@ import javax.swing.WindowConstants;
 
 /**
  *
+ * Osa käyttöliittymälogiikkaa ja käyttöliittymää. Avaa ohjeikkunan kysyttäessä.
+ * 
  * @author Arttu
  */
 public class OhjeidenantajaGUI implements ActionListener, Runnable {

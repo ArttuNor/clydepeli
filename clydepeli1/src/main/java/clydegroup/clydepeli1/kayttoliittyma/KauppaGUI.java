@@ -15,15 +15,26 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 
+/**
+ *
+ * Kaupan käyttöliittymä.
+ *
+ * @author Arttu
+ */
 public class KauppaGUI implements Runnable {
+
     private JFrame frame;
     private Kauppa kauppa;
     private Hahmo pelaajaHahmo;
 
-    public KauppaGUI(Hahmo pelaajaHahmo){
+    /**
+     *
+     * @param pelaajaHahmo
+     */
+    public KauppaGUI(Hahmo pelaajaHahmo) {
         this.pelaajaHahmo = pelaajaHahmo;
     }
-    
+
     @Override
     public void run() {
         frame = new JFrame("Clydepeli");
@@ -36,7 +47,7 @@ public class KauppaGUI implements Runnable {
         frame.pack();
         frame.setVisible(true);
     }
-    
+
     private void luoKomponentit(Container container) {
         container.setLayout(new GridLayout(0, 1));
 
@@ -45,14 +56,14 @@ public class KauppaGUI implements Runnable {
         );
 
         this.kauppa = new Kauppa();
-        
+
         for (Esine e : this.kauppa.getTarjonta()) {
             JButton lisattava = new JButton(e.getNimi());
             container.add(lisattava);
             lisattava.addActionListener(new KauppaListener(this.frame,
-            e, this.pelaajaHahmo));
+                    e, this.pelaajaHahmo));
         }
-        
+
         container.add(new JLabel(""));
 
         container.add(new JButton(new AbstractAction("Takaisin") {

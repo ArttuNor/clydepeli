@@ -5,6 +5,8 @@ import javax.swing.SwingUtilities;
 
 /**
  *
+ * Käynnistää pelin.
+ * 
  * @author Arttu
  */
 public class Main {
@@ -16,6 +18,6 @@ public class Main {
     public static void main(String[] args) {
         AloitusGUI kayttoliittyma = new AloitusGUI();
         SwingUtilities.invokeLater(kayttoliittyma);
-        
+
     }
 }

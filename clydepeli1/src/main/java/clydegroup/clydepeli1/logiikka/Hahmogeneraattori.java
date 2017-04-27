@@ -27,9 +27,8 @@ public class Hahmogeneraattori {
 
     /**
      *
-     * Metodi lisää generaattorin listalle hahmoja. Tämä metodi on
-     * aikataulusyistä aika kamala ja täynnä kovakoodattua hömppää. Siistin sen
-     * alkavalla viikolla.
+     * Metodi luo generaattorin listalle hahmot. Metodi on vähän hiomaton ja
+     * turhan kovakoodattu, mutta ajaa asiansa.
      *
      */
     public void luoHahmot() {
@@ -53,7 +52,7 @@ public class Hahmogeneraattori {
         jantsunvahvuudet.add("tunteet");
 
         Hahmo jantsu = new Hahmo("Jantsu", 17, jantsuniskut, jantsunvahvuudet,
-                jantsunheikkoudet, "src/main/resources/jantsu.png");
+                jantsunheikkoudet, "jantsu.png");
 
         //Kukkis
         List kukkikseniskut = new ArrayList<>();
@@ -70,7 +69,7 @@ public class Hahmogeneraattori {
         kukkiksenvahvuudet.add("ego");
 
         Hahmo kukkis = new Hahmo("Kukkis", 13, kukkikseniskut,
-                kukkiksenheikkoudet, kukkiksenvahvuudet,"src/main/resources/kukkis.png");
+                kukkiksenheikkoudet, kukkiksenvahvuudet, "kukkis.png");
 
         //Dosentti
         List dosentiniskut = new ArrayList<>();
@@ -85,16 +84,21 @@ public class Hahmogeneraattori {
         dosentinvahvuudet.add("valelogiikka");
 
         Hahmo dosentti = new Hahmo("Dosentti", 15, dosentiniskut,
-                dosentinheikkoudet, dosentinvahvuudet, "src/main/resources/dosentti.png");
+                dosentinheikkoudet, dosentinvahvuudet, "dosentti.png");
 
         this.lista.add(jantsu);
         this.lista.add(kukkis);
         this.lista.add(dosentti);
     }
 
+    /**
+     *
+     * Metodi lisää olion listalle kovakoodatut viholliset.
+     *
+     */
     public void luoVihut() {
         Hyokkays klassikko = new Hyokkays("Klassinen trolli", 1, "trolli");
-        
+
         Hyokkays aitis = new Hyokkays("Äitis on!", 1, "henkilokohtaisuus");
         Hyokkays laskukaava = new Hyokkays("Tarpeeton laskukaava", 1,
                 "valelogiikka");
@@ -117,8 +121,8 @@ public class Hahmogeneraattori {
         penanvahvuudet.add("tunteet");
 
         Hahmo pena = new Hahmo("Pikku-Pena", 4, penaniskut,
-                penanheikkoudet, penanvahvuudet, "src/main/resources/pena.png");
-        
+                penanheikkoudet, penanvahvuudet, "pena.png");
+
         //Mielensäpahoittaja
         List mpniskut = new ArrayList<>();
         mpniskut.add(pahaMieli);
@@ -128,8 +132,8 @@ public class Hahmogeneraattori {
         mpnvahvuudet.add("ego");
 
         Hahmo mielensapahoittaja = new Hahmo("Mielensäpahoittaja", 4, mpniskut,
-                mpnheikkoudet, mpnvahvuudet, "src/main/resources/mp.png");
-        
+                mpnheikkoudet, mpnvahvuudet, "mp.png");
+
         //"Nuori nero"
         List neroniskut = new ArrayList<>();
         neroniskut.add(laskukaava);
@@ -142,10 +146,10 @@ public class Hahmogeneraattori {
 
         List neronvahvuudet = new ArrayList<>();
         neronvahvuudet.add("valelogiikka");
-        
+
         Hahmo nuoriNero = new Hahmo("\"Nuori nero\"", 4, neroniskut,
-                neronheikkoudet, neronvahvuudet, "src/main/resources/nero.png");
-        
+                neronheikkoudet, neronvahvuudet, "nero.png");
+
         this.vihulista.add(pena);
         this.vihulista.add(mielensapahoittaja);
         this.vihulista.add(nuoriNero);
@@ -158,7 +162,11 @@ public class Hahmogeneraattori {
     public List<Hahmo> getLista() {
         return lista;
     }
-    
+
+    /**
+     *
+     * @return
+     */
     public Hahmo arvoVihu() {
         Random random = new Random();
         luoVihut();

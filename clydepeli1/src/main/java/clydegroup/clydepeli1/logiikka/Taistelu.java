@@ -10,6 +10,9 @@ import javax.swing.SwingUtilities;
 
 /**
  *
+ * Luokka, jonka olio pyörittää taistelun logiikkaa. Metodi "hyokkaa()" on tässä
+ * keskeisin.
+ * 
  * @author Arttu
  */
 public class Taistelu {
@@ -26,6 +29,7 @@ public class Taistelu {
      * @param pelaaja
      * @param vihollinen
      * @param voitot
+     * @param gui
      */
     public Taistelu(Hahmo pelaaja, Hahmo vihollinen, int voitot,
             TaisteluGUI gui) {
@@ -38,21 +42,24 @@ public class Taistelu {
     /**
      *
      * Metodi toimii taistelutilanteen peruslooppina. Se kysyy käyttäjältä, mitä
-     * hyökkäystä käytetään (kesken), jonka jälkeen se tarkistaa, onko
+     * hyökkäystä käytetään, jonka jälkeen se tarkistaa, onko
      * vihollisella hp jäljellä. Jos ei, siirrytään pois loopista seuraavaan
      * taisteluun. Jos on, vihollinen hyökkää. Jos käyttäjällä on tämän jälkeen
-     * hp, taisto jatkuu. Muuten peli päättyy. (Kesken.)
-     *
+     * hp, taisto jatkuu. Muuten peli päättyy. 
+     * 
      * @param hyokkaysnro
+     * @throws java.io.IOException
      */
     public void hyokkaa(int hyokkaysnro) throws IOException {
 
+        // Pelaajan hyökkäys (ja debuggausviesti).
         pelaaja.kaytaHyokkaysta(hyokkaysnro, vihollinen);
         System.out.println("Iskit"
                 + pelaaja.getHyokkaykset().get(hyokkaysnro).getNimi()
                 + vihollinen.getHp());
 
-        // Laita omaan metodiinsa, kun ehdit.
+        // Tarkistetaan selvisikö vihollinen, eli mennäänkö eteenpäin kohti
+        // seuraavaa taistelua, vai iskeekö vihollinen takaisin.
         if (vihollinen.getHp() < 1) {
             this.voitot++;
             this.pelaaja.setRaha(this.pelaaja.getRaha() + 2);
@@ -70,9 +77,8 @@ public class Taistelu {
 
         } else {
 
-            Random random = new Random();
-            int maksimi = vihollinen.getHyokkaykset().size();
-            int vihunIsku = random.nextInt(maksimi);
+            //Vihollisen hyökkäys.
+            int vihunIsku = arvoVihollisenHyokkays();
             vihollinen.kaytaHyokkaysta(vihunIsku, pelaaja);
             System.out.println("Vihu iskee"
                     + vihollinen.getHyokkaykset().get(vihunIsku).getNimi()
@@ -88,6 +94,7 @@ public class Taistelu {
                     + "." + System.lineSeparator() + "Sinulla on jäljellä "
                     + pelaaja.getHp() + " elämää.");
 
+            //Tarkistetaan, onko selvisikö pelaaja.
             if (pelaaja.getHp() < 1) {
                 // Kerro pelin päättyneen ja palaa valikkoon.
                 this.gui.lopetaTaistelu();
@@ -96,38 +103,72 @@ public class Taistelu {
             }
         }
 
+        //Päivitetään HP.
         this.gui.paivitaHP();
 
     }
 
+    private int arvoVihollisenHyokkays() {
+        Random random = new Random();
+        int maksimi = vihollinen.getHyokkaykset().size();
+        int vihunIsku = random.nextInt(maksimi);
+        return vihunIsku;
+    }
+
+    /**
+     *
+     * @return
+     */
     public Hahmo getVihollinen() {
         return vihollinen;
     }
 
+    /**
+     *
+     * @param vihollinen
+     */
     public void setVihollinen(Hahmo vihollinen) {
         this.vihollinen = vihollinen;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getVoitot() {
         return voitot;
     }
 
+    /**
+     *
+     * @param voitot
+     */
     public void setVoitot(int voitot) {
         this.voitot = voitot;
     }
 
+    /**
+     *
+     * @return
+     */
     public Hahmo getPelaaja() {
         return pelaaja;
     }
 
+    /**
+     *
+     * @param pelaaja
+     */
     public void setPelaaja(Hahmo pelaaja) {
         this.pelaaja = pelaaja;
     }
 
+    /**
+     *
+     * @return
+     */
     public TaisteluGUI getGui() {
         return gui;
     }
-    
-    
 
 }

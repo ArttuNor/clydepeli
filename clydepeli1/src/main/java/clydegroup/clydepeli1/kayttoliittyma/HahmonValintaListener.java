@@ -8,11 +8,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 
+/**
+ *
+ * Osa käyttöliittymälogiikkaa, kuuntelee valittua hahmoa.
+ * 
+ * @author Arttu
+ */
 public class HahmonValintaListener implements ActionListener {
     
     private JFrame frame;
     private Hahmo hahmo;
     
+    /**
+     *
+     * @param frame
+     * @param hahmo
+     */
     public HahmonValintaListener(JFrame frame, Hahmo hahmo) {
         this.frame = frame;
         this.hahmo = hahmo;

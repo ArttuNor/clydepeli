@@ -31,6 +31,7 @@ public class Hahmo {
      * @param hyokkaykset
      * @param heikkoudet
      * @param vahvuudet
+     * @param kuva
      */
     public Hahmo(String nimi, int hp, List<Hyokkays> hyokkaykset, List<String> heikkoudet, List<String> vahvuudet, String kuva) {
         this.nimi = nimi;
@@ -54,16 +55,6 @@ public class Hahmo {
         } else {
             this.hp = this.hp - menetys;
         }
-    }
-
-    /**
-     *
-     * Lisää hahmon hyökkäyksiin parametrina annetun hyökkäyksen.
-     *
-     * @param h
-     */
-    public void opiHyokkays(Hyokkays h) {
-        this.hyokkaykset.add(h);
     }
 
     /**
@@ -159,30 +150,51 @@ public class Hahmo {
         this.hyokkaykset = hyokkaykset;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Esine> getEsineet() {
         return esineet;
     }
 
+    /**
+     *
+     * @param esineet
+     */
     public void setEsineet(List<Esine> esineet) {
         this.esineet = esineet;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getRaha() {
         return raha;
     }
 
+    /**
+     *
+     * @param raha
+     */
     public void setRaha(int raha) {
         this.raha = raha;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getKuva() {
         return kuva;
     }
 
+    /**
+     *
+     * @param kuva
+     */
     public void setKuva(String kuva) {
         this.kuva = kuva;
     }
-    
-
-    
 }

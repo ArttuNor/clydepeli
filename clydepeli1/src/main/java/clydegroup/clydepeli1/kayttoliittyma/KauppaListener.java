@@ -10,11 +10,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 
+/**
+ *
+ * Osa käyttöliittymälogiikkaa, kuuntelee kaupassa valittuja esineitä.
+ * 
+ * @author Arttu
+ */
 public class KauppaListener implements ActionListener {
     private JFrame frame;
     private Hahmo hahmo;
     private Esine esine;
 
+    /**
+     *
+     * @param frame
+     * @param esine
+     * @param hahmo
+     */
     public KauppaListener(JFrame frame, Esine esine, Hahmo hahmo) {
         this.frame = frame;
         this.hahmo = hahmo;

@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 /**
  *
+ * Osa käyttöliittymälogiikkaa, sulkee pelin.
+ * 
  * @author Arttu
  */
 public class Lopettaja implements ActionListener {

@@ -3,7 +3,7 @@ package clydegroup.clydepeli1.hahmot;
 /**
  *
  * Luokka, jonka olioita Hahmot kutsuvat vaikuttaakseen toisiinsa.
- * 
+ *
  * @author Arttu
  */
 public class Hyokkays {
@@ -14,7 +14,7 @@ public class Hyokkays {
 
     /**
      * Luo uuden Hyokkays-olion.
-     * 
+     *
      * @param nimi
      * @param voima
      * @param tyyppi
@@ -27,9 +27,9 @@ public class Hyokkays {
 
     /**
      *
-     * Vahentaa parametrina annetun hahmon h elämää sen heikkouksien
-     * ja hyökkäyksen tyypin perusteella.
-     * 
+     * Vahentaa parametrina annetun hahmon h elämää sen heikkouksien ja
+     * hyökkäyksen tyypin perusteella.
+     *
      * @param h
      */
     public void kayta(Hahmo h) {

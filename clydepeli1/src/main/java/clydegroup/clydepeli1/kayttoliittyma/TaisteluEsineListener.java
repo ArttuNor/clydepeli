@@ -6,10 +6,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
-public class TaisteluEsineListener implements ActionListener{
+/**
+ *
+ * Osa käyttöliittymän logiikkaa, kuuntelee taistelussa käytettyjä esineitä.
+ *
+ * @author Arttu
+ */
+public class TaisteluEsineListener implements ActionListener {
+
     private Taistelu taistelu;
     private Esine esine;
 
+    /**
+     *
+     * @param taistelu
+     * @param esine
+     */
     public TaisteluEsineListener(Taistelu taistelu, Esine esine) {
         this.taistelu = taistelu;
         this.esine = esine;
@@ -19,10 +31,9 @@ public class TaisteluEsineListener implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         this.esine.kayta(this.taistelu.getPelaaja());
         this.taistelu.getPelaaja().getEsineet().remove(e);
-        
+
         this.taistelu.getGui().setEsineenKaytto(new JButton("Sinulla ei ole esinetä."));
         this.taistelu.getGui().paivitaHP();
     }
-    
-    
+
 }

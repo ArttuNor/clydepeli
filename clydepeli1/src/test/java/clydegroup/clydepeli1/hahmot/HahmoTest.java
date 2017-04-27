@@ -72,20 +72,11 @@ public class HahmoTest {
     }
 
     @Test
-    public void opiHyokkaysLisaaHyokkayksen() {
-        Hyokkays hyokkays2 = new Hyokkays("hyokkays2", 3, "oletus");
-        h.opiHyokkays(hyokkays2);
-        hyokkayslista.add(hyokkays2);
-
-        assertEquals(hyokkayslista, h.getHyokkaykset());
-    }
-
-    @Test
     public void kaytaHyokkaystaVahentaaKohteenElamaa() {
         Hahmo hyokkaaja = new Hahmo("mauri", 3, hyokkayslista, heikkouslista,
-        vahvuuslista, ".");
+                vahvuuslista, ".");
         Hahmo hyokattava = new Hahmo("pekko", 3, hyokkayslista, heikkouslista,
-        vahvuuslista, ".");
+                vahvuuslista, ".");
 
         hyokkaaja.kaytaHyokkaysta(0, hyokattava);
 

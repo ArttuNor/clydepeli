@@ -17,6 +17,8 @@ import javax.swing.WindowConstants;
 
 /**
  *
+ * Hahmonvalinnan käyttöliittymä.
+ *
  * @author Arttu
  */
 public class HahmonValintaGUI implements Runnable {
@@ -43,16 +45,13 @@ public class HahmonValintaGUI implements Runnable {
         container.add(teksti
         );
 
-        //Seuraavaksi jatkan tästä: lisään nappeihin toiminnallisuuden, ja vien
-        //pelaajan valitseman hahmon taisteluun.
         List<Hahmo> hahmot = hahmojenLuonti();
         for (Hahmo h : hahmot) {
             JButton lisattava = new JButton(h.getNimi());
             container.add(lisattava);
-            lisattava.addActionListener(new HahmonValintaListener(this.frame,
-            h));
+            lisattava.addActionListener(new HahmonValintaListener(this.frame, h));
         }
-        
+
         container.add(new JLabel(""));
 
         container.add(new JButton(new AbstractAction("Takaisin") {

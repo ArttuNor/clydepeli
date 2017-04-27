@@ -9,8 +9,15 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ *
+ * @author Arttu
+ */
 public class HyokkaysTest {
 
+    /**
+     *
+     */
     public HyokkaysTest() {
     }
     Hyokkays h = new Hyokkays("suora", 1, "oletus");
@@ -20,33 +27,54 @@ public class HyokkaysTest {
     Hahmo hahmo = new Hahmo("mauri", 3, hyokkayslista, heikkouslista,
     vahvuuslista, ".");
 
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
 
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
 
+    /**
+     *
+     */
     @Before
     public void setUp() {
         hyokkayslista.add(new Hyokkays("hyokkays1", 1, "oletus"));
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
 
+    /**
+     *
+     */
     @Test
     public void konstruktoriAsettaaNimenOikein() {
         assertEquals("suora", h.getNimi());
     }
 
+    /**
+     *
+     */
     @Test
     public void konstruktoriAsettaaVoimanOikein() {
         assertEquals(1, h.getVoima());
     }
 
+    /**
+     *
+     */
     @Test
     public void kayttaminenVahentaaKohteenElamaa() {
         h.kayta(hahmo);
@@ -54,6 +82,9 @@ public class HyokkaysTest {
         assertEquals(2, hahmo.getHp());
     }
 
+    /**
+     *
+     */
     @Test
     public void heikkousTyypinKayttaminenVahentaaElamaaTuplasti() {
         List<String> heikkoudet = new ArrayList<>();
@@ -65,6 +96,9 @@ public class HyokkaysTest {
         assertEquals(1, hahmo.getHp());
     }
 
+    /**
+     *
+     */
     @Test
     public void vahvuusTyypinKayttaminenVahentaaElamaaTuplasti() {
         List<String> vahvuudet = new ArrayList<>();

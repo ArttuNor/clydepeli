@@ -12,6 +12,8 @@ import javax.swing.WindowConstants;
 
 /**
  *
+ * Aloitusvalikon käyttöliittymä.
+ *
  * @author Arttu
  */
 public class AloitusGUI implements Runnable {
@@ -38,7 +40,7 @@ public class AloitusGUI implements Runnable {
     }
 
     private void luoKomponentit(Container container) {
-        container.setLayout(new GridLayout(0,1));
+        container.setLayout(new GridLayout(0, 1));
 
         JButton aloitusNappi = new JButton("Aloita peli");
         container.add(aloitusNappi);
