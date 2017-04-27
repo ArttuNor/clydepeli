@@ -4,6 +4,7 @@ import clydegroup.clydepeli1.logiikka.Taistelu;
 import clydegroup.clydepeli1.hahmot.Hahmo;
 import clydegroup.clydepeli1.hahmot.Hyokkays;
 import clydegroup.clydepeli1.kayttoliittyma.TaisteluGUI;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
@@ -23,13 +24,14 @@ public class TaisteluTest {
     List<String> heikkouslista = new ArrayList<>();
     List<String> vahvuuslista = new ArrayList<>();
     Hahmo pelaaja = new Hahmo("mauri", 3, hyokkayslista, heikkouslista,
-            vahvuuslista);
+            vahvuuslista, "src/main/resources/dosentti");
     Hahmo vihollinen = new Hahmo("pekka", 3, hyokkayslista, heikkouslista,
-            vahvuuslista);
-    Taistelu taistelu = new Taistelu(pelaaja, vihollinen,
-            0, new TaisteluGUI(pelaaja, 0));
+            vahvuuslista, "src/main/resources/jantsu");
+    Taistelu taistelu;
 
-    public TaisteluTest() {
+    public TaisteluTest() throws IOException {
+        this.taistelu = new Taistelu(pelaaja, vihollinen,
+                0, new TaisteluGUI(pelaaja, 0));
     }
 
     @BeforeClass

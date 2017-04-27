@@ -4,6 +4,9 @@ import clydegroup.clydepeli1.hahmot.Hyokkays;
 import clydegroup.clydepeli1.logiikka.Taistelu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TaisteluListener implements ActionListener {
 
@@ -18,7 +21,11 @@ public class TaisteluListener implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.taistelu.hyokkaa(this.hyokkaysnro);
+        try {
+            this.taistelu.hyokkaa(this.hyokkaysnro);
+        } catch (IOException ex) {
+            Logger.getLogger(TaisteluListener.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
     

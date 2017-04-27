@@ -14,7 +14,8 @@ public class HahmoTest {
     List<Hyokkays> hyokkayslista = new ArrayList<>();
     List<String> heikkouslista = new ArrayList<>();
     List<String> vahvuuslista = new ArrayList<>();
-    Hahmo h = new Hahmo("mauri", 3, hyokkayslista, heikkouslista, vahvuuslista);
+    Hahmo h = new Hahmo("mauri", 3, hyokkayslista, heikkouslista, vahvuuslista,
+            ".");
 
     public HahmoTest() {
     }
@@ -82,9 +83,9 @@ public class HahmoTest {
     @Test
     public void kaytaHyokkaystaVahentaaKohteenElamaa() {
         Hahmo hyokkaaja = new Hahmo("mauri", 3, hyokkayslista, heikkouslista,
-        vahvuuslista);
+        vahvuuslista, ".");
         Hahmo hyokattava = new Hahmo("pekko", 3, hyokkayslista, heikkouslista,
-        vahvuuslista);
+        vahvuuslista, ".");
 
         hyokkaaja.kaytaHyokkaysta(0, hyokattava);
 

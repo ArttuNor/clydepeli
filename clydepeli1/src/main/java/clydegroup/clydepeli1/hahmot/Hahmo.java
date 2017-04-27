@@ -1,5 +1,6 @@
 package clydegroup.clydepeli1.hahmot;
 
+import clydegroup.clydepeli1.kauppa.Esine;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,9 @@ public class Hahmo {
     private List<Hyokkays> hyokkaykset;
     private List<String> heikkoudet;
     private List<String> vahvuudet;
+    private List<Esine> esineet;
+    private int raha;
+    private String kuva;
 
     /**
      *
@@ -28,12 +32,15 @@ public class Hahmo {
      * @param heikkoudet
      * @param vahvuudet
      */
-    public Hahmo(String nimi, int hp, List<Hyokkays> hyokkaykset, List<String> heikkoudet, List<String> vahvuudet) {
+    public Hahmo(String nimi, int hp, List<Hyokkays> hyokkaykset, List<String> heikkoudet, List<String> vahvuudet, String kuva) {
         this.nimi = nimi;
         this.hp = hp;
         this.hyokkaykset = hyokkaykset;
         this.heikkoudet = heikkoudet;
         this.vahvuudet = vahvuudet;
+        this.esineet = new ArrayList<>();
+        this.raha = 0;
+        this.kuva = kuva;
     }
 
     /**
@@ -152,4 +159,30 @@ public class Hahmo {
         this.hyokkaykset = hyokkaykset;
     }
 
+    public List<Esine> getEsineet() {
+        return esineet;
+    }
+
+    public void setEsineet(List<Esine> esineet) {
+        this.esineet = esineet;
+    }
+
+    public int getRaha() {
+        return raha;
+    }
+
+    public void setRaha(int raha) {
+        this.raha = raha;
+    }
+
+    public String getKuva() {
+        return kuva;
+    }
+
+    public void setKuva(String kuva) {
+        this.kuva = kuva;
+    }
+    
+
+    
 }

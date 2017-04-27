@@ -53,7 +53,7 @@ public class Hahmogeneraattori {
         jantsunvahvuudet.add("tunteet");
 
         Hahmo jantsu = new Hahmo("Jantsu", 17, jantsuniskut, jantsunvahvuudet,
-                jantsunheikkoudet);
+                jantsunheikkoudet, "src/main/resources/jantsu.png");
 
         //Kukkis
         List kukkikseniskut = new ArrayList<>();
@@ -70,7 +70,7 @@ public class Hahmogeneraattori {
         kukkiksenvahvuudet.add("ego");
 
         Hahmo kukkis = new Hahmo("Kukkis", 13, kukkikseniskut,
-                kukkiksenheikkoudet, kukkiksenvahvuudet);
+                kukkiksenheikkoudet, kukkiksenvahvuudet,"src/main/resources/kukkis.png");
 
         //Dosentti
         List dosentiniskut = new ArrayList<>();
@@ -85,7 +85,7 @@ public class Hahmogeneraattori {
         dosentinvahvuudet.add("valelogiikka");
 
         Hahmo dosentti = new Hahmo("Dosentti", 15, dosentiniskut,
-                dosentinheikkoudet, dosentinvahvuudet);
+                dosentinheikkoudet, dosentinvahvuudet, "src/main/resources/dosentti.png");
 
         this.lista.add(jantsu);
         this.lista.add(kukkis);
@@ -117,7 +117,7 @@ public class Hahmogeneraattori {
         penanvahvuudet.add("tunteet");
 
         Hahmo pena = new Hahmo("Pikku-Pena", 4, penaniskut,
-                penanheikkoudet, penanvahvuudet);
+                penanheikkoudet, penanvahvuudet, "src/main/resources/pena.png");
         
         //Mielensäpahoittaja
         List mpniskut = new ArrayList<>();
@@ -128,7 +128,7 @@ public class Hahmogeneraattori {
         mpnvahvuudet.add("ego");
 
         Hahmo mielensapahoittaja = new Hahmo("Mielensäpahoittaja", 4, mpniskut,
-                mpnheikkoudet, mpnvahvuudet);
+                mpnheikkoudet, mpnvahvuudet, "src/main/resources/mp.png");
         
         //"Nuori nero"
         List neroniskut = new ArrayList<>();
@@ -144,7 +144,7 @@ public class Hahmogeneraattori {
         neronvahvuudet.add("valelogiikka");
         
         Hahmo nuoriNero = new Hahmo("\"Nuori nero\"", 4, neroniskut,
-                neronheikkoudet, neronvahvuudet);
+                neronheikkoudet, neronvahvuudet, "src/main/resources/nero.png");
         
         this.vihulista.add(pena);
         this.vihulista.add(mielensapahoittaja);
@@ -162,7 +162,7 @@ public class Hahmogeneraattori {
     public Hahmo arvoVihu() {
         Random random = new Random();
         luoVihut();
-        return this.vihulista.get(random.nextInt(2));
+        return this.vihulista.get(random.nextInt(3));
     }
 
 }

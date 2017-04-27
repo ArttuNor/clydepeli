@@ -2,7 +2,9 @@ package clydegroup.clydepeli1.logiikka;
 
 import clydegroup.clydepeli1.hahmot.Hahmo;
 import clydegroup.clydepeli1.kayttoliittyma.AloitusGUI;
+import clydegroup.clydepeli1.kayttoliittyma.KauppaGUI;
 import clydegroup.clydepeli1.kayttoliittyma.TaisteluGUI;
+import java.io.IOException;
 import java.util.Random;
 import javax.swing.SwingUtilities;
 
@@ -43,7 +45,7 @@ public class Taistelu {
      *
      * @param hyokkaysnro
      */
-    public void hyokkaa(int hyokkaysnro) {
+    public void hyokkaa(int hyokkaysnro) throws IOException {
 
         pelaaja.kaytaHyokkaysta(hyokkaysnro, vihollinen);
         System.out.println("Iskit"
@@ -53,11 +55,19 @@ public class Taistelu {
         // Laita omaan metodiinsa, kun ehdit.
         if (vihollinen.getHp() < 1) {
             this.voitot++;
+            this.pelaaja.setRaha(this.pelaaja.getRaha() + 2);
             // Näytä voitot, mahdollinen matsien välinen tilanne.
             this.gui.lopetaTaistelu();
-            TaisteluGUI uusiTaisteluGUI = new TaisteluGUI(this.pelaaja,
-                    this.voitot);
-            uusiTaisteluGUI.run();
+
+            if (voitot == 3 || voitot == 6 || voitot == 9) {
+                KauppaGUI avattavaKauppa = new KauppaGUI(this.pelaaja);
+                avattavaKauppa.run();
+            } else {
+                TaisteluGUI uusiTaisteluGUI = new TaisteluGUI(this.pelaaja,
+                        this.voitot);
+                uusiTaisteluGUI.run();
+            }
+
         } else {
 
             Random random = new Random();
@@ -86,6 +96,8 @@ public class Taistelu {
             }
         }
 
+        this.gui.paivitaHP();
+
     }
 
     public Hahmo getVihollinen() {
@@ -111,5 +123,11 @@ public class Taistelu {
     public void setPelaaja(Hahmo pelaaja) {
         this.pelaaja = pelaaja;
     }
+
+    public TaisteluGUI getGui() {
+        return gui;
+    }
+    
+    
 
 }

@@ -9,6 +9,8 @@ import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 /**
@@ -40,7 +42,10 @@ public class OhjeidenantajaGUI implements ActionListener, Runnable {
     private void luoKomponentit(Container container) {
         container.setLayout(new BorderLayout());
 
-        JLabel teksti = new JLabel("Clydepelissä tarkoituksesi on voittaa vihollisia.");
+        JTextArea teksti = new JTextArea("Clydepelissä tarkoituksesi on voittaa vihollisia."
+                + System.lineSeparator() + "Tämä tapahtuu valitsemalla hyökkäyksiä ja käyttämällä esineitä."
+                + System.lineSeparator() + "Tietyt viholliset ovat heikompia tai vahvempia tietynkaltaisia"
+                + System.lineSeparator() + "hyökkäyksiä vastaan.");
         container.add(teksti);
 
         container.add(new JButton(new AbstractAction("Takaisin") {

@@ -3,6 +3,7 @@ package clydegroup.clydepeli1.kayttoliittyma;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -37,10 +38,10 @@ public class AloitusGUI implements Runnable {
     }
 
     private void luoKomponentit(Container container) {
-        container.setLayout(new BorderLayout());
+        container.setLayout(new GridLayout(0,1));
 
         JButton aloitusNappi = new JButton("Aloita peli");
-        container.add(aloitusNappi, BorderLayout.NORTH);
+        container.add(aloitusNappi);
         aloitusNappi.addActionListener(new AloitusListener(this.frame));
 
         JButton ohjeetNappi = new JButton("Ohjeet");
@@ -48,7 +49,7 @@ public class AloitusGUI implements Runnable {
         ohjeetNappi.addActionListener(new OhjeidenantajaGUI());
 
         JButton lopetaNappi = new JButton("Lopeta peli");
-        container.add(lopetaNappi, BorderLayout.SOUTH);
+        container.add(lopetaNappi);
         lopetaNappi.addActionListener(new Lopettaja());
 
     }
