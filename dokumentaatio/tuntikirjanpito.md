@@ -16,3 +16,5 @@ Päivä | Tunnit | Kuvaus
 25.04.2017 | 1h | Vihollisgeneraattorin koodaaminen.
 26.04.2017 | 2h | Grafiikoita, esinelogiikkaa.
 27.04.2017 | 2h | Esinelogiikkaa, käyttöliittymän siistimistä.
+03.05.2017 | 1h | Bugien korjaamista.
+04.05.2017 | 1h | Bugien korjaamista, käyttöliittymän parantelua, testien parantelua.
