@@ -24,9 +24,9 @@ public class KauppaListener implements ActionListener {
 
     /**
      *
-     * @param frame
-     * @param esine
-     * @param hahmo
+     * @param frame Kuunnellun KauppaGUIn frame.
+     * @param esine Mikä esine valittiin.
+     * @param hahmo Minkä hahmon esineisiin esine lisätään.
      */
     public KauppaListener(JFrame frame, Esine esine, Hahmo hahmo) {
         this.frame = frame;
@@ -44,11 +44,9 @@ public class KauppaListener implements ActionListener {
         }
 
         TaisteluGUI taistelu = null;
-        try {
-            taistelu = new TaisteluGUI(this.hahmo, 0);
-        } catch (IOException ex) {
-            Logger.getLogger(KauppaListener.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+        taistelu = new TaisteluGUI(this.hahmo, 0);
+
         this.frame.dispose();
         taistelu.run();
         taistelu.paivitaEsine();

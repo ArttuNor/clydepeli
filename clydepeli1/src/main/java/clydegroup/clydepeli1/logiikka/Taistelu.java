@@ -2,13 +2,10 @@ package clydegroup.clydepeli1.logiikka;
 
 import clydegroup.clydepeli1.hahmot.Hahmo;
 import clydegroup.clydepeli1.kauppa.Esine;
-import clydegroup.clydepeli1.kayttoliittyma.AloitusGUI;
-import clydegroup.clydepeli1.kayttoliittyma.KauppaGUI;
 import clydegroup.clydepeli1.kayttoliittyma.TaisteluGUI;
 import clydegroup.clydepeli1.kayttoliittyma.TulosIlmoittaja;
 import java.io.IOException;
 import java.util.Random;
-import javax.swing.SwingUtilities;
 
 /**
  *
@@ -28,10 +25,10 @@ public class Taistelu {
      *
      * Luo taisteluolion.
      *
-     * @param pelaaja
-     * @param vihollinen
-     * @param voitot
-     * @param gui
+     * @param pelaaja Käyttäjän hallitsema hahmo.
+     * @param vihollinen Vihollishahmo.
+     * @param voitot Pelaajan voitot tällä kierroksella.
+     * @param gui Käytettävä TaisteluGUI-olio.
      */
     public Taistelu(Hahmo pelaaja, Hahmo vihollinen, int voitot,
             TaisteluGUI gui) {
@@ -49,10 +46,9 @@ public class Taistelu {
      * vihollinen hyökkää. Jos käyttäjällä on tämän jälkeen hp, taisto jatkuu.
      * Muuten peli päättyy.
      *
-     * @param hyokkaysnro
-     * @throws java.io.IOException
+     * @param hyokkaysnro Sen hyökkäyksen numero, jota käytetään.
      */
-    public void hyokkaa(int hyokkaysnro) throws IOException {
+    public void hyokkaa(int hyokkaysnro) {
         // Pelaajan hyökkäys
         pelaaja.kaytaHyokkaysta(hyokkaysnro, vihollinen);
         // Tarkistetaan selvisikö vihollinen, eli mennäänkö eteenpäin kohti
@@ -83,26 +79,24 @@ public class Taistelu {
         //Päivitetään HP.
         this.gui.paivitaHP();
     }
-    
+
     /**
      *
-     * Toimii kuin hyökkääminen, mutta kutsutaan, jos pelaaja käyttääkin esinettä.
-     * 
-     * @param esine
-     * @throws IOException
+     * Toimii kuin hyökkääminen, mutta kutsutaan, jos pelaaja käyttääkin
+     * esinettä.
+     *
+     * @param esine Se esine, jota käytetään.
      */
-    public void kaytaEsine(Esine esine) throws IOException{
-        if (esine.getNimi().equals("Kofeiinia")){
+    public void kaytaEsine(Esine esine) {
+        if (esine.getNimi().equals("Kofeiinia")) {
             esine.kayta(pelaaja);
         } else {
             esine.kayta(vihollinen);
         }
-        
-        if (this.pelaaja.getEsineet().size() > 0){
+
+        if (this.pelaaja.getEsineet().size() > 0) {
             this.pelaaja.getEsineet().remove(0);
         }
-        
-        System.out.println("Käytit esinettä." + pelaaja.getHp());
 
         if (!selvisiko(vihollinen)) {
             voitaTaistelu();
@@ -130,9 +124,6 @@ public class Taistelu {
 
     private void vihuIskee(int vihunIsku) {
         vihollinen.kaytaHyokkaysta(vihunIsku, pelaaja);
-        System.out.println("Vihu iskee"
-                + vihollinen.getHyokkaykset().get(vihunIsku).getNimi()
-                + pelaaja.getHp());
     }
 
     private boolean selvisiko(Hahmo hahmo) {
@@ -144,13 +135,13 @@ public class Taistelu {
     }
 
     private void haviaTaistelu() {
-        this.gui.lopetaTaistelu();        
+        this.gui.lopetaTaistelu();
         TulosIlmoittaja ti
                 = new TulosIlmoittaja("Hävisit taistelun. Pelisi päättyy.", this, false);
         ti.run();
     }
 
-    private void voitaTaistelu() throws IOException {
+    private void voitaTaistelu() {
         this.voitot++;
         this.pelaaja.setRaha(this.pelaaja.getRaha() + 2);
         // Näytä voitot, mahdollinen matsien välinen tilanne.
@@ -167,58 +158,30 @@ public class Taistelu {
         return vihunIsku;
     }
 
-    /**
-     *
-     * @return
-     */
     public Hahmo getVihollinen() {
         return vihollinen;
     }
 
-    /**
-     *
-     * @param vihollinen
-     */
     public void setVihollinen(Hahmo vihollinen) {
         this.vihollinen = vihollinen;
     }
 
-    /**
-     *
-     * @return
-     */
     public int getVoitot() {
         return voitot;
     }
 
-    /**
-     *
-     * @param voitot
-     */
     public void setVoitot(int voitot) {
         this.voitot = voitot;
     }
 
-    /**
-     *
-     * @return
-     */
     public Hahmo getPelaaja() {
         return pelaaja;
     }
 
-    /**
-     *
-     * @param pelaaja
-     */
     public void setPelaaja(Hahmo pelaaja) {
         this.pelaaja = pelaaja;
     }
 
-    /**
-     *
-     * @return
-     */
     public TaisteluGUI getGui() {
         return gui;
     }

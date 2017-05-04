@@ -16,7 +16,7 @@ public class Kauppa {
     private List<Esine> tarjonta;
 
     /**
-     *
+     * Konstruktori.
      */
     public Kauppa() {
         this.tarjonta = new ArrayList<>();
@@ -33,18 +33,10 @@ public class Kauppa {
         }
     }
 
-    /**
-     *
-     * @return
-     */
     public List<Esine> getTarjonta() {
         return tarjonta;
     }
 
-    /**
-     *
-     * @param tarjonta
-     */
     public void setTarjonta(List<Esine> tarjonta) {
         this.tarjonta = tarjonta;
     }

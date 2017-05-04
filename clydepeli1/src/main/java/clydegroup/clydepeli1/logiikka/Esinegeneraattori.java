@@ -18,7 +18,7 @@ public class Esinegeneraattori {
      *
      * Metodi, joka palauttaa sattumanvaraisen esineen.
      * 
-     * @return
+     * @return Arvottu esine.
      */
     public Esine arvoEsine() {
         Random random = new Random();

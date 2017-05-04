@@ -15,9 +15,9 @@ public class Hyokkays {
     /**
      * Luo uuden Hyokkays-olion.
      *
-     * @param nimi
-     * @param voima
-     * @param tyyppi
+     * @param nimi Hyökkäyksen nimi.
+     * @param voima Kuinka paljon hyökkäys tekee vahinkoa.
+     * @param tyyppi Hyökkäyksen tyyppi (käytetään vahvuuksissa ja heikkouksissa).
      */
     public Hyokkays(String nimi, int voima, String tyyppi) {
         this.nimi = nimi;
@@ -30,7 +30,7 @@ public class Hyokkays {
      * Vahentaa parametrina annetun hahmon h elämää sen heikkouksien ja
      * hyökkäyksen tyypin perusteella.
      *
-     * @param h
+     * @param h Mikä hahmo menettää elämää.
      */
     public void kayta(Hahmo h) {
         int tehtyVahinko = this.voima;
@@ -54,34 +54,18 @@ public class Hyokkays {
         h.menetaElamaa(tehtyVahinko);
     }
 
-    /**
-     *
-     * @return
-     */
     public String getNimi() {
         return nimi;
     }
 
-    /**
-     *
-     * @param nimi
-     */
     public void setNimi(String nimi) {
         this.nimi = nimi;
     }
 
-    /**
-     *
-     * @return
-     */
     public int getVoima() {
         return voima;
     }
 
-    /**
-     *
-     * @param voima
-     */
     public void setVoima(int voima) {
         this.voima = voima;
     }

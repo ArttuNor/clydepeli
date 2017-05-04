@@ -16,7 +16,7 @@ public class AloitusListener implements ActionListener {
 
     /**
      *
-     * @param frame
+     * @param frame Kuunnellun AloitusGUIn frame.
      */
     public AloitusListener(JFrame frame) {
         this.frame = frame;

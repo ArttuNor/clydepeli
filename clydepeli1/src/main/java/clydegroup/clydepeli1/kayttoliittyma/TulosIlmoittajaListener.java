@@ -12,7 +12,7 @@ import javax.swing.SwingUtilities;
 /**
  *
  * Osa käyttöliittymälogiikkaa, kuuntelee pelaajaa TulosIlmoittaja-ikkunassa.
- * 
+ *
  * @author Arttu
  */
 public class TulosIlmoittajaListener implements ActionListener {
@@ -23,9 +23,9 @@ public class TulosIlmoittajaListener implements ActionListener {
 
     /**
      *
-     * @param taistelu
-     * @param voititko
-     * @param ti
+     * @param taistelu Minkä taistelun tulos ilmoitetaan.
+     * @param voititko Voititko taistelun, vaikuttaa ilmoitettavaan viestiin.
+     * @param ti Mitä tulosilmoittajaa kuunnellaan.
      */
     public TulosIlmoittajaListener(Taistelu taistelu, Boolean voititko,
             TulosIlmoittaja ti) {
@@ -44,13 +44,9 @@ public class TulosIlmoittajaListener implements ActionListener {
                 KauppaGUI avattavaKauppa = new KauppaGUI(this.taistelu.getPelaaja());
                 avattavaKauppa.run();
             } else {
-                try {
-                    TaisteluGUI uusiTaisteluGUI = new TaisteluGUI(this.taistelu.getPelaaja(),
-                            this.taistelu.getVoitot());
-                    uusiTaisteluGUI.run();
-                } catch (IOException ex) {
-                    Logger.getLogger(TulosIlmoittajaListener.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                TaisteluGUI uusiTaisteluGUI = new TaisteluGUI(this.taistelu.getPelaaja(),
+                        this.taistelu.getVoitot());
+                uusiTaisteluGUI.run();
 
             }
         } else {
@@ -58,7 +54,6 @@ public class TulosIlmoittajaListener implements ActionListener {
             SwingUtilities.invokeLater(kayttoliittyma);
 
         }
-        
 
     }
 

@@ -27,9 +27,9 @@ public class TulosIlmoittaja implements Runnable {
 
     /**
      *
-     * @param ilmoitus
-     * @param taistelu
-     * @param voititko
+     * @param ilmoitus Mitä kerrotaan.
+     * @param taistelu Mistä taistelusta kerrotaan.
+     * @param voititko Tuliko voitto vai tappio.
      */
     public TulosIlmoittaja(String ilmoitus, Taistelu taistelu, Boolean voititko) {
         this.ilmoitus = ilmoitus;
@@ -62,18 +62,10 @@ public class TulosIlmoittaja implements Runnable {
         nappi.addActionListener(new TulosIlmoittajaListener(taistelu, voititko, this));
     }
 
-    /**
-     *
-     * @return
-     */
     public JFrame getFrame() {
         return frame;
     }
 
-    /**
-     *
-     * @param frame
-     */
     public void setFrame(JFrame frame) {
         this.frame = frame;
     }

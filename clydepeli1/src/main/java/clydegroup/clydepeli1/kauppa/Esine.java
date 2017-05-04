@@ -5,22 +5,18 @@ import clydegroup.clydepeli1.hahmot.Hahmo;
 /**
  *
  * Luokka, joka toimii yliluokkana muille Esineille.
- * 
+ *
  * @author Arttu
  */
 public class Esine {
 
     private int hinta;
     private String kuvaus;
+    private String nimi;
 
     /**
-     *
-     */
-    public String nimi;
-
-    /**
-     *
-     * @param hinta
+     * Konstruktori.
+     * @param hinta Kuinka paljon maksaa.
      */
     public Esine(int hinta) {
         this.hinta = hinta;
@@ -29,61 +25,35 @@ public class Esine {
     /**
      *
      * Ei tee itsessään mitään, Override kaikissa esineissä.
-     * 
-     * @param kohde
+     *
+     * @param kohde Mihin hahmoon vaikutus kohdistuu.
      */
     public void kayta(Hahmo kohde) {
 
     }
 
-    /**
-     *
-     * @return
-     */
     public int getHinta() {
         return hinta;
     }
 
-    /**
-     *
-     * @param hinta
-     */
     public void setHinta(int hinta) {
         this.hinta = hinta;
     }
 
-    /**
-     *
-     * @return
-     */
     public String getNimi() {
         return nimi;
     }
 
-    /**
-     *
-     * @param nimi
-     */
     public void setNimi(String nimi) {
         this.nimi = nimi;
     }
 
-    /**
-     *
-     * @return
-     */
     public String getKuvaus() {
         return kuvaus;
     }
 
-    /**
-     *
-     * @param kuvaus
-     */
     public void setKuvaus(String kuvaus) {
         this.kuvaus = kuvaus;
     }
 
-    
-    
 }

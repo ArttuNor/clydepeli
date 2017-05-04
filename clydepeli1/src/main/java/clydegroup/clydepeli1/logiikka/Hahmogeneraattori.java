@@ -157,10 +157,6 @@ public class Hahmogeneraattori {
         this.vihulista.add(nuoriNero);
     }
 
-    /**
-     *
-     * @return
-     */
     public List<Hahmo> getLista() {
         return lista;
     }
@@ -169,7 +165,7 @@ public class Hahmogeneraattori {
      *
      * Palauttaa yhden sattumanvaraisen vihollisen.
      * 
-     * @return
+     * @return Arvottu vihollishahmo.
      */
     public Hahmo arvoVihu() {
         Random random = new Random();

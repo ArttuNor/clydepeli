@@ -15,6 +15,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
@@ -42,22 +44,32 @@ public class TaisteluGUI implements Runnable {
     private JLabel vihuKuva = new JLabel("");
 
     /**
-     * @param valittuHahmo
-     * @param voitot
-     * @throws IOException
+     * @param valittuHahmo Pelaajan hallitsema hahmo.
+     * @param voitot Pelaajan voitot.
      */
-    public TaisteluGUI(Hahmo valittuHahmo, int voitot) throws IOException {
+    public TaisteluGUI(Hahmo valittuHahmo, int voitot) {
         Hahmogeneraattori hg = new Hahmogeneraattori();
         this.taistelu = new Taistelu(valittuHahmo, hg.arvoVihu(), voitot, this);
         paivitaHP();
 
         InputStream isp = getClass().getClassLoader().getResourceAsStream(this.getTaistelu().getPelaaja().getKuva());
-        BufferedImage pKuvaTiedosto = ImageIO.read(isp);
-        this.pelaajaKuva = new JLabel(new ImageIcon(pKuvaTiedosto));
+        BufferedImage pKuvaTiedosto;
+        try {
+            pKuvaTiedosto = ImageIO.read(isp);
+            this.pelaajaKuva = new JLabel(new ImageIcon(pKuvaTiedosto));
+        } catch (IOException ex) {
+            Logger.getLogger(TaisteluGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         InputStream isv = getClass().getClassLoader().getResourceAsStream(this.getTaistelu().getVihollinen().getKuva());
-        BufferedImage vKuvaTiedosto = ImageIO.read(isv);
-        this.vihuKuva = new JLabel(new ImageIcon(vKuvaTiedosto));
+        BufferedImage vKuvaTiedosto;
+        try {
+            vKuvaTiedosto = ImageIO.read(isv);
+            this.vihuKuva = new JLabel(new ImageIcon(vKuvaTiedosto));
+        } catch (IOException ex) {
+            Logger.getLogger(TaisteluGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         this.esineenKaytto = new JButton("Sinulla ei ole esineitä.");
     }
 
@@ -115,7 +127,7 @@ public class TaisteluGUI implements Runnable {
     /**
      * Päivittää vaaditun tekstin infolaatikkoon.
      *
-     * @param teksti
+     * @param teksti Mikä teksti kerrotaan.
      */
     public void kerroInfo(String teksti) {
         this.infoboksi.setText(teksti);
@@ -147,106 +159,54 @@ public class TaisteluGUI implements Runnable {
         this.frame.dispose();
     }
 
-    /**
-     *
-     * @return
-     */
     public JFrame getFrame() {
         return frame;
     }
 
-    /**
-     *
-     * @return
-     */
     public Taistelu getTaistelu() {
         return taistelu;
     }
 
-    /**
-     *
-     * @return
-     */
     public JTextArea getInfoboksi() {
         return infoboksi;
     }
 
-    /**
-     *
-     * @param infoboksi
-     */
     public void setInfoboksi(JTextArea infoboksi) {
         this.infoboksi = infoboksi;
     }
 
-    /**
-     *
-     * @return
-     */
     public JButton getEsineenKaytto() {
         return esineenKaytto;
     }
 
-    /**
-     *
-     * @param esineenKaytto
-     */
     public void setEsineenKaytto(JButton esineenKaytto) {
         this.esineenKaytto = esineenKaytto;
     }
 
-    /**
-     *
-     * @return
-     */
     public JLabel getPelaajaTeksti() {
         return pelaajaTeksti;
     }
 
-    /**
-     *
-     * @param pelaajaTeksti
-     */
     public void setPelaajaTeksti(JLabel pelaajaTeksti) {
         this.pelaajaTeksti = pelaajaTeksti;
     }
 
-    /**
-     *
-     * @return
-     */
     public JLabel getPelaajaKuva() {
         return pelaajaKuva;
     }
 
-    /**
-     *
-     * @param pelaajaKuva
-     */
     public void setPelaajaKuva(JLabel pelaajaKuva) {
         this.pelaajaKuva = pelaajaKuva;
     }
 
-    /**
-     *
-     * @return
-     */
     public JLabel getVihuTeksti() {
         return vihuTeksti;
     }
 
-    /**
-     *
-     * @param vihuTeksti
-     */
     public void setVihuTeksti(JLabel vihuTeksti) {
         this.vihuTeksti = vihuTeksti;
     }
 
-    /**
-     *
-     * @return
-     */
     public JLabel getVihuKuva() {
         return vihuKuva;
     }

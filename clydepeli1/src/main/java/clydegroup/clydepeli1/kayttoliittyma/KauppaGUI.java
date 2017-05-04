@@ -29,7 +29,7 @@ public class KauppaGUI implements Runnable {
 
     /**
      *
-     * @param pelaajaHahmo
+     * @param pelaajaHahmo Pelaajan valitsema hahmo.
      */
     public KauppaGUI(Hahmo pelaajaHahmo) {
         this.pelaajaHahmo = pelaajaHahmo;

@@ -22,8 +22,8 @@ public class TaisteluEsineListener implements ActionListener {
 
     /**
      *
-     * @param taistelu
-     * @param esine
+     * @param taistelu Mitä taistelua kuunnellaan.
+     * @param esine Mitä esinettä käytetään.
      */
     public TaisteluEsineListener(Taistelu taistelu, Esine esine) {
         this.taistelu = taistelu;
@@ -32,11 +32,7 @@ public class TaisteluEsineListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        try {
-            this.taistelu.kaytaEsine(esine);
-        } catch (IOException ex) {
-            Logger.getLogger(TaisteluEsineListener.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        this.taistelu.kaytaEsine(esine);
     }
 
 }

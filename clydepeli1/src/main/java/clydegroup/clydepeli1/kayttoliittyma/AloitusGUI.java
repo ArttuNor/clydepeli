@@ -21,7 +21,7 @@ public class AloitusGUI implements Runnable {
     private JFrame frame;
 
     /**
-     *
+     * Konstruktori.
      */
     public AloitusGUI() {
     }
@@ -56,10 +56,6 @@ public class AloitusGUI implements Runnable {
 
     }
 
-    /**
-     *
-     * @return
-     */
     public JFrame getFrame() {
         return frame;
     }

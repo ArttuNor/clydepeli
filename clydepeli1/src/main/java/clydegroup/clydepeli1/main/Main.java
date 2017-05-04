@@ -13,7 +13,8 @@ public class Main {
 
     /**
      *
-     * @param args
+     * Käynnistää ohjelman.
+     * @param args Komentoriviargumentit.
      */
     public static void main(String[] args) {
         AloitusGUI kayttoliittyma = new AloitusGUI();

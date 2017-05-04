@@ -21,8 +21,8 @@ public class HahmonValintaListener implements ActionListener {
     
     /**
      *
-     * @param frame
-     * @param hahmo
+     * @param frame Kuunnellun HahmonValintaGUIn frame.
+     * @param hahmo Mikä hahmo valittiin.
      */
     public HahmonValintaListener(JFrame frame, Hahmo hahmo) {
         this.frame = frame;
@@ -32,11 +32,7 @@ public class HahmonValintaListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         TaisteluGUI taistelu = null;
-        try {
-            taistelu = new TaisteluGUI(this.hahmo, 0);
-        } catch (IOException ex) {
-            Logger.getLogger(HahmonValintaListener.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        taistelu = new TaisteluGUI(this.hahmo, 0);
         this.frame.dispose();
         taistelu.run();
     }

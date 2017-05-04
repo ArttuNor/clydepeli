@@ -47,7 +47,7 @@ public class Hahmo {
     /**
      * Hahmo menettää elämää parametrin menetys mukaan.
      *
-     * @param menetys
+     * @param menetys Kuinka paljon hahmo menettää elämää.
      */
     public void menetaElamaa(int menetys) {
         if (menetys > this.hp) {
@@ -63,137 +63,73 @@ public class Hahmo {
      * nro vastaavan hyökkäyksen metodia kayta() ja antaa sille parameriksi
      * Hahmon kohde.
      *
-     * @param nro
-     * @param kohde
+     * @param nro Minkä numeroista hyökkäystä käytetään.
+     * @param kohde Mihin kohteeseen.
      */
     public void kaytaHyokkaysta(int nro, Hahmo kohde) {
         this.hyokkaykset.get(nro).kayta(kohde);
     }
 
-    /**
-     *
-     * @return
-     */
     public List<String> getHeikkoudet() {
         return heikkoudet;
     }
 
-    /**
-     *
-     * @return
-     */
     public List<String> getVahvuudet() {
         return vahvuudet;
     }
 
-    /**
-     *
-     * @param heikkoudet
-     */
     public void setHeikkoudet(List<String> heikkoudet) {
         this.heikkoudet = heikkoudet;
     }
 
-    /**
-     *
-     * @param vahvuudet
-     */
     public void setVahvuudet(List<String> vahvuudet) {
         this.vahvuudet = vahvuudet;
     }
 
-    /**
-     *
-     * @return
-     */
     public String getNimi() {
         return nimi;
     }
 
-    /**
-     *
-     * @param nimi
-     */
     public void setNimi(String nimi) {
         this.nimi = nimi;
     }
 
-    /**
-     *
-     * @return
-     */
     public int getHp() {
         return hp;
     }
 
-    /**
-     *
-     * @param hp
-     */
     public void setHp(int hp) {
         this.hp = hp;
     }
 
-    /**
-     *
-     * @return
-     */
     public List<Hyokkays> getHyokkaykset() {
         return hyokkaykset;
     }
 
-    /**
-     *
-     * @param hyokkaykset
-     */
     public void setHyokkaykset(List<Hyokkays> hyokkaykset) {
         this.hyokkaykset = hyokkaykset;
     }
 
-    /**
-     *
-     * @return
-     */
     public List<Esine> getEsineet() {
         return esineet;
     }
 
-    /**
-     *
-     * @param esineet
-     */
     public void setEsineet(List<Esine> esineet) {
         this.esineet = esineet;
     }
 
-    /**
-     *
-     * @return
-     */
     public int getRaha() {
         return raha;
     }
 
-    /**
-     *
-     * @param raha
-     */
     public void setRaha(int raha) {
         this.raha = raha;
     }
 
-    /**
-     *
-     * @return
-     */
     public String getKuva() {
         return kuva;
     }
 
-    /**
-     *
-     * @param kuva
-     */
     public void setKuva(String kuva) {
         this.kuva = kuva;
     }

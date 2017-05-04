@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 /**
  *
  * Osa käyttöliittymän logiikkaa, kuuntelee valittuja iskuja.
- * 
+ *
  * @author Arttu
  */
 public class TaisteluListener implements ActionListener {
@@ -21,23 +21,18 @@ public class TaisteluListener implements ActionListener {
 
     /**
      *
-     * @param hyokkaysnro
-     * @param taistelu
+     * @param hyokkaysnro Minkä numeroista hyökkäystä käytetään.
+     * @param taistelu Mitä taistelua kuunnellaan.
      */
     public TaisteluListener(int hyokkaysnro, Taistelu taistelu) {
         this.hyokkaysnro = hyokkaysnro;
         this.taistelu = taistelu;
     }
-        
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        try {
-            this.taistelu.hyokkaa(this.hyokkaysnro);
-        } catch (IOException ex) {
-            Logger.getLogger(TaisteluListener.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        this.taistelu.hyokkaa(this.hyokkaysnro);
+
     }
-    
+
 }

@@ -12,8 +12,8 @@ import clydegroup.clydepeli1.hahmot.Hahmo;
 public class Kofeiini extends Esine {
 
     /**
-     *
-     * @param hinta
+     * Konstruktori.
+     * @param hinta Kuinka paljon maksaa?
      */
     public Kofeiini(int hinta) {
         super(hinta);
