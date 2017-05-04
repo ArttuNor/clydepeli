@@ -11,6 +11,8 @@ import javax.swing.SwingUtilities;
 
 /**
  *
+ * Osa käyttöliittymälogiikkaa, kuuntelee pelaajaa TulosIlmoittaja-ikkunassa.
+ * 
  * @author Arttu
  */
 public class TulosIlmoittajaListener implements ActionListener {

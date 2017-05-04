@@ -8,6 +8,8 @@ import java.util.Random;
 
 /**
  *
+ * Luokka, jossa hahmot luodaan ja arvotaan tarvittaessa.
+ * 
  * @author Arttu
  */
 public class Hahmogeneraattori {
@@ -165,6 +167,8 @@ public class Hahmogeneraattori {
 
     /**
      *
+     * Palauttaa yhden sattumanvaraisen vihollisen.
+     * 
      * @return
      */
     public Hahmo arvoVihu() {

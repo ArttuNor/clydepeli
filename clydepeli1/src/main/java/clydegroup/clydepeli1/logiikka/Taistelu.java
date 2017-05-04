@@ -53,17 +53,12 @@ public class Taistelu {
      * @throws java.io.IOException
      */
     public void hyokkaa(int hyokkaysnro) throws IOException {
-        // Pelaajan hyökkäys (ja debuggausviesti).
+        // Pelaajan hyökkäys
         pelaaja.kaytaHyokkaysta(hyokkaysnro, vihollinen);
-        System.out.println("Iskit"
-                + pelaaja.getHyokkaykset().get(hyokkaysnro).getNimi()
-                + vihollinen.getHp());
-
         // Tarkistetaan selvisikö vihollinen, eli mennäänkö eteenpäin kohti
         // seuraavaa taistelua, vai iskeekö vihollinen takaisin.
         if (!selvisiko(vihollinen)) {
             voitaTaistelu();
-            System.out.println("Selvisit tänne asti!");
         } else {
             //Vihollisen hyökkäys.
             int vihunIsku = arvoVihollisenHyokkays();
@@ -91,6 +86,8 @@ public class Taistelu {
     
     /**
      *
+     * Toimii kuin hyökkääminen, mutta kutsutaan, jos pelaaja käyttääkin esinettä.
+     * 
      * @param esine
      * @throws IOException
      */

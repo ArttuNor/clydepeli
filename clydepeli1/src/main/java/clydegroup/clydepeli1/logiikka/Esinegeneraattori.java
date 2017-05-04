@@ -16,6 +16,8 @@ public class Esinegeneraattori {
 
     /**
      *
+     * Metodi, joka palauttaa sattumanvaraisen esineen.
+     * 
      * @return
      */
     public Esine arvoEsine() {
@@ -26,11 +28,9 @@ public class Esinegeneraattori {
             return (new Kofeiini(6));
         } else if (tulos == 1) {
             return (new KilautaModelle(2));
-        } else if (tulos == 2) {
-            return (new Energiajuoma(10));
         } else {
-            return (new Energiajuoma(19));
+            return (new Energiajuoma(10));
         }
-
+        
     }
 }

@@ -37,13 +37,17 @@
                 <configuration>
                     <targetClasses>
                         <param>clydegroup.clydepeli1.hahmot*</param>
-                        <param>clydegroup.clydepeli1.kauppa*</param>
-                        <param>clydegroup.clydepeli1.logiikka.Taistelu</param>
+                        <param>clydegroup.clydepeli1.kauppa.Energiajuoma</param>
+                        <param>clydegroup.clydepeli1.kauppa.Kauppa</param>
+                        <param>clydegroup.clydepeli1.kauppa.KilautaModelle</param>
+                        <param>clydegroup.clydepeli1.kauppa.Kofeiini</param>
                     </targetClasses>
                     <targetTests>
                         <param>clydegroup.clydepeli1.hahmot*</param>
-                        <param>clydegroup.clydepeli1.kauppa*</param>
-                        <param>clydegroup.clydepeli1.logiikka.TaisteluTest</param>
+                        <param>clydegroup.clydepeli1.kauppa.EnergiajuomaTest</param>
+                        <param>clydegroup.clydepeli1.kauppa.KauppaTest</param>
+                        <param>clydegroup.clydepeli1.kauppa.KilautaModelleTest</param>
+                        <param>clydegroup.clydepeli1.kauppa.KofeiiniTest</param>
                     </targetTests>
                 </configuration>
             </plugin>

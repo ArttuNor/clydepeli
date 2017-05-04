@@ -26,12 +26,12 @@ public class Hahmo {
      *
      * Luo hahmon.
      *
-     * @param nimi
-     * @param hp
-     * @param hyokkaykset
-     * @param heikkoudet
-     * @param vahvuudet
-     * @param kuva
+     * @param nimi Hahmon nimi.
+     * @param hp Hahmon hp eli hit pointit.
+     * @param hyokkaykset Lista hahmon hyökkäyksistä.
+     * @param heikkoudet Lista hahmon heikkouksista.
+     * @param vahvuudet Lista hahmon vahvuuksista.
+     * @param kuva Hahmon kuvan sijainti.
      */
     public Hahmo(String nimi, int hp, List<Hyokkays> hyokkaykset, List<String> heikkoudet, List<String> vahvuudet, String kuva) {
         this.nimi = nimi;

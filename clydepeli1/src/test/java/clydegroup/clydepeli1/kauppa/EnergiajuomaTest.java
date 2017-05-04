@@ -11,9 +11,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class KofeiiniTest {
+public class EnergiajuomaTest {
 
-    public KofeiiniTest() {
+    public EnergiajuomaTest() {
     }
 
     @BeforeClass
@@ -46,9 +46,9 @@ public class KofeiiniTest {
         Hahmo h = new Hahmo("mauri", 10, hyokkayslista, heikkouslista, vahvuuslista,
                 ".");
 
-        Kofeiini k = new Kofeiini(4);
-        k.kayta(h);
+        Energiajuoma e = new Energiajuoma(4);
+        e.kayta(h);
 
-        assertEquals(18, h.getHp());
+        assertEquals(30, h.getHp());
     }
 }

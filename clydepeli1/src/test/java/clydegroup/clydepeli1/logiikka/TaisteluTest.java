@@ -101,4 +101,5 @@ public class TaisteluTest {
 
         assertEquals(1, this.taistelu.getVoitot());
     }
+
 }
