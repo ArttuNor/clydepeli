@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017</copyright>
     <item>
-      <title>File: 21,
+      <title>File: 24,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -44,6 +44,20 @@ under the License.
             </tr>
           </thead>
           <tbody>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.kauppa.Energiajuoma.java">clydegroup/clydepeli1/kauppa/Energiajuoma.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.kayttoliittyma.HahmonValintaListener.java">clydegroup/clydepeli1/kayttoliittyma/HahmonValintaListener.java</a>
@@ -242,6 +256,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.kayttoliittyma.TulosIlmoittajaListener.java">clydegroup/clydepeli1/kayttoliittyma/TulosIlmoittajaListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.kauppa.KilautaModelle.java">clydegroup/clydepeli1/kauppa/KilautaModelle.java</a>
                 </td>
                 <td>
@@ -299,6 +327,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.kayttoliittyma.TaisteluGUI.java">clydegroup/clydepeli1/kayttoliittyma/TaisteluGUI.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#clydegroup.clydepeli1.kayttoliittyma.TulosIlmoittaja.java">clydegroup/clydepeli1/kayttoliittyma/TulosIlmoittaja.java</a>
                 </td>
                 <td>
                   0

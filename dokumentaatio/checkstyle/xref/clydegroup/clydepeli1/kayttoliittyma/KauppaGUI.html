@@ -37,7 +37,7 @@
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>  
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>  <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <em class="jxr_javadoccomment">     * @param pelaajaHahmo</em>
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <em class="jxr_javadoccomment">     * @param pelaajaHahmo Pelaajan valitsema hahmo.</em>
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>  <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>      <strong class="jxr_keyword">public</strong> <a href="../../../clydegroup/clydepeli1/kayttoliittyma/KauppaGUI.html">KauppaGUI</a>(<a href="../../../clydegroup/clydepeli1/hahmot/Hahmo.html">Hahmo</a> pelaajaHahmo) {
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>          <strong class="jxr_keyword">this</strong>.pelaajaHahmo = pelaajaHahmo;
@@ -70,18 +70,21 @@
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>              container.add(lisattava);
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>              lisattava.addActionListener(<strong class="jxr_keyword">new</strong> <a href="../../../clydegroup/clydepeli1/kayttoliittyma/KauppaListener.html">KauppaListener</a>(<strong class="jxr_keyword">this</strong>.frame,
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>                      e, <strong class="jxr_keyword">this</strong>.pelaajaHahmo));
-<a class="jxr_linenumber" name="L65" href="#L65">65</a>          }
-<a class="jxr_linenumber" name="L66" href="#L66">66</a>  
-<a class="jxr_linenumber" name="L67" href="#L67">67</a>          container.add(<strong class="jxr_keyword">new</strong> JLabel(<span class="jxr_string">""</span>));
-<a class="jxr_linenumber" name="L68" href="#L68">68</a>  
-<a class="jxr_linenumber" name="L69" href="#L69">69</a>          container.add(<strong class="jxr_keyword">new</strong> JButton(<strong class="jxr_keyword">new</strong> AbstractAction(<span class="jxr_string">"Takaisin"</span>) {
-<a class="jxr_linenumber" name="L70" href="#L70">70</a>              @Override
-<a class="jxr_linenumber" name="L71" href="#L71">71</a>              <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> actionPerformed(ActionEvent e) {
-<a class="jxr_linenumber" name="L72" href="#L72">72</a>                  frame.dispose();
-<a class="jxr_linenumber" name="L73" href="#L73">73</a>              }
-<a class="jxr_linenumber" name="L74" href="#L74">74</a>          }), BorderLayout.SOUTH);
-<a class="jxr_linenumber" name="L75" href="#L75">75</a>      }
-<a class="jxr_linenumber" name="L76" href="#L76">76</a>  }
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>              String kokoKuvaus = <strong class="jxr_keyword">new</strong> String(e.getKuvaus() + <span class="jxr_string">" Hinta: "</span>
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>              + e.getHinta());
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>              container.add(<strong class="jxr_keyword">new</strong> JLabel(kokoKuvaus));
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>          }
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>  
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>          container.add(<strong class="jxr_keyword">new</strong> JLabel(<span class="jxr_string">""</span>));
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>  
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>          container.add(<strong class="jxr_keyword">new</strong> JButton(<strong class="jxr_keyword">new</strong> AbstractAction(<span class="jxr_string">"Lopeta peli"</span>) {
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>              @Override
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>              <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> actionPerformed(ActionEvent e) {
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>                  frame.dispose();
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>              }
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>          }), BorderLayout.SOUTH);
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>      }
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2017. All rights reserved.</div>

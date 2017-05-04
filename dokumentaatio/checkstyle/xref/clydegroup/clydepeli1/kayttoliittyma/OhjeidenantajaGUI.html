@@ -24,7 +24,7 @@
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_javadoccomment"> * Osa käyttöliittymälogiikkaa ja käyttöliittymää. Avaa ohjeikkunan kysyttäessä.</em>
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_javadoccomment"> * </em>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_javadoccomment"> * @author Arttu</em>
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../clydegroup/clydepeli1/kayttoliittyma/OhjeidenantajaGUI.html">OhjeidenantajaGUI</a> <strong class="jxr_keyword">implements</strong> ActionListener, Runnable {
@@ -55,18 +55,19 @@
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>          JTextArea teksti = <strong class="jxr_keyword">new</strong> JTextArea(<span class="jxr_string">"Clydepelissä tarkoituksesi on voittaa vihollisia."</span>
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>                  + System.lineSeparator() + <span class="jxr_string">"Tämä tapahtuu valitsemalla hyökkäyksiä ja käyttämällä esineitä."</span>
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>                  + System.lineSeparator() + <span class="jxr_string">"Tietyt viholliset ovat heikompia tai vahvempia tietynkaltaisia"</span>
-<a class="jxr_linenumber" name="L50" href="#L50">50</a>                  + System.lineSeparator() + <span class="jxr_string">"hyökkäyksiä vastaan."</span>);
-<a class="jxr_linenumber" name="L51" href="#L51">51</a>          container.add(teksti);
-<a class="jxr_linenumber" name="L52" href="#L52">52</a>  
-<a class="jxr_linenumber" name="L53" href="#L53">53</a>          container.add(<strong class="jxr_keyword">new</strong> JButton(<strong class="jxr_keyword">new</strong> AbstractAction(<span class="jxr_string">"Takaisin"</span>) {
-<a class="jxr_linenumber" name="L54" href="#L54">54</a>              @Override
-<a class="jxr_linenumber" name="L55" href="#L55">55</a>              <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> actionPerformed(ActionEvent e) {
-<a class="jxr_linenumber" name="L56" href="#L56">56</a>                  frame.dispose();
-<a class="jxr_linenumber" name="L57" href="#L57">57</a>              }
-<a class="jxr_linenumber" name="L58" href="#L58">58</a>          }), BorderLayout.SOUTH);
-<a class="jxr_linenumber" name="L59" href="#L59">59</a>      }
-<a class="jxr_linenumber" name="L60" href="#L60">60</a>  
-<a class="jxr_linenumber" name="L61" href="#L61">61</a>  }
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>                  + System.lineSeparator() + <span class="jxr_string">"hyökkäyksiä vastaan."</span> + System.lineSeparator()
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>                  + System.lineSeparator() + <span class="jxr_string">"Kuinka kauan SINÄ jaksat riidellä internetissä?"</span>);
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>          container.add(teksti);
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>          container.add(<strong class="jxr_keyword">new</strong> JButton(<strong class="jxr_keyword">new</strong> AbstractAction(<span class="jxr_string">"Takaisin"</span>) {
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>              @Override
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>              <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> actionPerformed(ActionEvent e) {
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>                  frame.dispose();
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>              }
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>          }), BorderLayout.SOUTH);
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>      }
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>  
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2017. All rights reserved.</div>
