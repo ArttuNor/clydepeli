@@ -13,10 +13,11 @@ import javax.swing.JFrame;
 /**
  *
  * Osa käyttöliittymälogiikkaa, kuuntelee kaupassa valittuja esineitä.
- * 
+ *
  * @author Arttu
  */
 public class KauppaListener implements ActionListener {
+
     private JFrame frame;
     private Hahmo hahmo;
     private Esine esine;
@@ -37,9 +38,11 @@ public class KauppaListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         List<Esine> hahmonEsineet = this.hahmo.getEsineet();
         hahmonEsineet.add(this.esine);
-        this.hahmo.setEsineet(hahmonEsineet);
-        this.hahmo.setRaha(this.hahmo.getRaha() - this.esine.getHinta());
-        
+        if (this.hahmo.getRaha() - this.esine.getHinta() >= 0) {
+            this.hahmo.setRaha(this.hahmo.getRaha() - this.esine.getHinta());
+            this.hahmo.setEsineet(hahmonEsineet);
+        }
+
         TaisteluGUI taistelu = null;
         try {
             taistelu = new TaisteluGUI(this.hahmo, 0);

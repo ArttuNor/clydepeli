@@ -16,7 +16,7 @@ import javax.swing.WindowConstants;
 /**
  *
  * Osa käyttöliittymälogiikkaa ja käyttöliittymää. Avaa ohjeikkunan kysyttäessä.
- * 
+ *
  * @author Arttu
  */
 public class OhjeidenantajaGUI implements ActionListener, Runnable {
@@ -47,7 +47,8 @@ public class OhjeidenantajaGUI implements ActionListener, Runnable {
         JTextArea teksti = new JTextArea("Clydepelissä tarkoituksesi on voittaa vihollisia."
                 + System.lineSeparator() + "Tämä tapahtuu valitsemalla hyökkäyksiä ja käyttämällä esineitä."
                 + System.lineSeparator() + "Tietyt viholliset ovat heikompia tai vahvempia tietynkaltaisia"
-                + System.lineSeparator() + "hyökkäyksiä vastaan.");
+                + System.lineSeparator() + "hyökkäyksiä vastaan." + System.lineSeparator()
+                + System.lineSeparator() + "Kuinka kauan SINÄ jaksat riidellä internetissä?");
         container.add(teksti);
 
         container.add(new JButton(new AbstractAction("Takaisin") {

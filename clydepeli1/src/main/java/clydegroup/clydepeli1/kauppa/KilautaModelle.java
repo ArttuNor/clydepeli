@@ -18,6 +18,7 @@ public class KilautaModelle extends Esine {
     public KilautaModelle(int hinta) {
         super(hinta);
         super.setNimi("Kilauta modelle -oljenkorsi");
+        super.setKuvaus("Hanki riitakumppanillesi välittömät bännit!");
     }
 
     @Override

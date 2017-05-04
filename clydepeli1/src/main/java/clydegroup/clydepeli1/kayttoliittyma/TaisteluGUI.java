@@ -10,6 +10,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -113,6 +114,7 @@ public class TaisteluGUI implements Runnable {
 
     /**
      * Päivittää vaaditun tekstin infolaatikkoon.
+     *
      * @param teksti
      */
     public void kerroInfo(String teksti) {
@@ -123,9 +125,19 @@ public class TaisteluGUI implements Runnable {
      * Päivittää oikean esineen käytössäolevaksi.
      */
     public void paivitaEsine() {
-        this.esineenKaytto.setText(this.taistelu.getPelaaja().getEsineet().get(0).getNimi());
-        this.esineenKaytto.addActionListener(new TaisteluEsineListener(this.taistelu,
-                this.taistelu.getPelaaja().getEsineet().get(0)));
+        if (this.taistelu.getPelaaja().getEsineet().size() > 0) {
+            this.esineenKaytto.setText(this.taistelu.getPelaaja().getEsineet().get(0).getNimi());
+            this.esineenKaytto.addActionListener(new TaisteluEsineListener(this.taistelu,
+                    this.taistelu.getPelaaja().getEsineet().get(0)));
+        } else {
+            this.esineenKaytto.setText("Sinulla ei ole esineitä.");
+
+            for (ActionListener al : this.esineenKaytto.getActionListeners()) {
+                this.esineenKaytto.removeActionListener(al);
+            }
+
+        }
+
     }
 
     /**
@@ -134,55 +146,107 @@ public class TaisteluGUI implements Runnable {
     public void lopetaTaistelu() {
         this.frame.dispose();
     }
- 
+
+    /**
+     *
+     * @return
+     */
     public JFrame getFrame() {
         return frame;
     }
- 
+
+    /**
+     *
+     * @return
+     */
     public Taistelu getTaistelu() {
         return taistelu;
     }
- 
+
+    /**
+     *
+     * @return
+     */
     public JTextArea getInfoboksi() {
         return infoboksi;
     }
- 
+
+    /**
+     *
+     * @param infoboksi
+     */
     public void setInfoboksi(JTextArea infoboksi) {
         this.infoboksi = infoboksi;
     }
- 
+
+    /**
+     *
+     * @return
+     */
     public JButton getEsineenKaytto() {
         return esineenKaytto;
     }
- 
+
+    /**
+     *
+     * @param esineenKaytto
+     */
     public void setEsineenKaytto(JButton esineenKaytto) {
         this.esineenKaytto = esineenKaytto;
     }
- 
+
+    /**
+     *
+     * @return
+     */
     public JLabel getPelaajaTeksti() {
         return pelaajaTeksti;
     }
- 
+
+    /**
+     *
+     * @param pelaajaTeksti
+     */
     public void setPelaajaTeksti(JLabel pelaajaTeksti) {
         this.pelaajaTeksti = pelaajaTeksti;
     }
- 
+
+    /**
+     *
+     * @return
+     */
     public JLabel getPelaajaKuva() {
         return pelaajaKuva;
     }
- 
+
+    /**
+     *
+     * @param pelaajaKuva
+     */
     public void setPelaajaKuva(JLabel pelaajaKuva) {
         this.pelaajaKuva = pelaajaKuva;
     }
- 
+
+    /**
+     *
+     * @return
+     */
     public JLabel getVihuTeksti() {
         return vihuTeksti;
     }
- 
+
+    /**
+     *
+     * @param vihuTeksti
+     */
     public void setVihuTeksti(JLabel vihuTeksti) {
         this.vihuTeksti = vihuTeksti;
     }
- 
+
+    /**
+     *
+     * @return
+     */
     public JLabel getVihuKuva() {
         return vihuKuva;
     }

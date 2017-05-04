@@ -11,6 +11,7 @@ import clydegroup.clydepeli1.hahmot.Hahmo;
 public class Esine {
 
     private int hinta;
+    private String kuvaus;
 
     /**
      *
@@ -67,4 +68,22 @@ public class Esine {
         this.nimi = nimi;
     }
 
+    /**
+     *
+     * @return
+     */
+    public String getKuvaus() {
+        return kuvaus;
+    }
+
+    /**
+     *
+     * @param kuvaus
+     */
+    public void setKuvaus(String kuvaus) {
+        this.kuvaus = kuvaus;
+    }
+
+    
+    
 }

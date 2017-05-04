@@ -1,5 +1,6 @@
 package clydegroup.clydepeli1.logiikka;
 
+import clydegroup.clydepeli1.kauppa.Energiajuoma;
 import clydegroup.clydepeli1.kauppa.Esine;
 import clydegroup.clydepeli1.kauppa.KilautaModelle;
 import clydegroup.clydepeli1.kauppa.Kofeiini;
@@ -22,9 +23,13 @@ public class Esinegeneraattori {
         int tulos = random.nextInt(2);
 
         if (tulos == 0) {
-            return (new Kofeiini(5));
+            return (new Kofeiini(6));
+        } else if (tulos == 1) {
+            return (new KilautaModelle(2));
+        } else if (tulos == 2) {
+            return (new Energiajuoma(10));
         } else {
-            return (new KilautaModelle(3));
+            return (new Energiajuoma(19));
         }
 
     }

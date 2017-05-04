@@ -9,21 +9,21 @@ import clydegroup.clydepeli1.hahmot.Hahmo;
  *
  * @author Arttu
  */
-public class Kofeiini extends Esine {
+public class Energiajuoma extends Esine {
 
     /**
      *
      * @param hinta
      */
-    public Kofeiini(int hinta) {
+    public Energiajuoma(int hinta) {
         super(hinta);
         super.setNimi("Kofeiinia");
-        super.setKuvaus("Kahvin parantava voima auttaa jaksamaan!");
+        super.setKuvaus("Energiajuoma - voimakkain kuviteltavissa oleva parannusesine!");
     }
 
     @Override
     public void kayta(Hahmo kohde) {
-        kohde.setHp(kohde.getHp() + 8);
+        kohde.setHp(kohde.getHp() + 20);
     }
 
 }

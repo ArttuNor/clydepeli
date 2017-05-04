@@ -4,6 +4,9 @@ import clydegroup.clydepeli1.kauppa.Esine;
 import clydegroup.clydepeli1.logiikka.Taistelu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 
 /**
@@ -29,11 +32,11 @@ public class TaisteluEsineListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.esine.kayta(this.taistelu.getPelaaja());
-        this.taistelu.getPelaaja().getEsineet().remove(e);
-
-        this.taistelu.getGui().setEsineenKaytto(new JButton("Sinulla ei ole esinetä."));
-        this.taistelu.getGui().paivitaHP();
+        try {
+            this.taistelu.kaytaEsine(esine);
+        } catch (IOException ex) {
+            Logger.getLogger(TaisteluEsineListener.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

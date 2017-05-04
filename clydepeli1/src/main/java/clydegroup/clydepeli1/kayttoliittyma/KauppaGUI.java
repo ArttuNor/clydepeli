@@ -62,11 +62,14 @@ public class KauppaGUI implements Runnable {
             container.add(lisattava);
             lisattava.addActionListener(new KauppaListener(this.frame,
                     e, this.pelaajaHahmo));
+            String kokoKuvaus = new String(e.getKuvaus() + " Hinta: "
+            + e.getHinta());
+            container.add(new JLabel(kokoKuvaus));
         }
 
         container.add(new JLabel(""));
 
-        container.add(new JButton(new AbstractAction("Takaisin") {
+        container.add(new JButton(new AbstractAction("Lopeta peli") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();

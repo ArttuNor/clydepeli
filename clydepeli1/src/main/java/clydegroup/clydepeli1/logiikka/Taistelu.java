@@ -1,9 +1,11 @@
 package clydegroup.clydepeli1.logiikka;
 
 import clydegroup.clydepeli1.hahmot.Hahmo;
+import clydegroup.clydepeli1.kauppa.Esine;
 import clydegroup.clydepeli1.kayttoliittyma.AloitusGUI;
 import clydegroup.clydepeli1.kayttoliittyma.KauppaGUI;
 import clydegroup.clydepeli1.kayttoliittyma.TaisteluGUI;
+import clydegroup.clydepeli1.kayttoliittyma.TulosIlmoittaja;
 import java.io.IOException;
 import java.util.Random;
 import javax.swing.SwingUtilities;
@@ -12,7 +14,7 @@ import javax.swing.SwingUtilities;
  *
  * Luokka, jonka olio pyörittää taistelun logiikkaa. Metodi "hyokkaa()" on tässä
  * keskeisin.
- * 
+ *
  * @author Arttu
  */
 public class Taistelu {
@@ -42,16 +44,15 @@ public class Taistelu {
     /**
      *
      * Metodi toimii taistelutilanteen peruslooppina. Se kysyy käyttäjältä, mitä
-     * hyökkäystä käytetään, jonka jälkeen se tarkistaa, onko
-     * vihollisella hp jäljellä. Jos ei, siirrytään pois loopista seuraavaan
-     * taisteluun. Jos on, vihollinen hyökkää. Jos käyttäjällä on tämän jälkeen
-     * hp, taisto jatkuu. Muuten peli päättyy. 
-     * 
+     * hyökkäystä käytetään, jonka jälkeen se tarkistaa, onko vihollisella hp
+     * jäljellä. Jos ei, siirrytään pois loopista seuraavaan taisteluun. Jos on,
+     * vihollinen hyökkää. Jos käyttäjällä on tämän jälkeen hp, taisto jatkuu.
+     * Muuten peli päättyy.
+     *
      * @param hyokkaysnro
      * @throws java.io.IOException
      */
     public void hyokkaa(int hyokkaysnro) throws IOException {
-
         // Pelaajan hyökkäys (ja debuggausviesti).
         pelaaja.kaytaHyokkaysta(hyokkaysnro, vihollinen);
         System.out.println("Iskit"
@@ -60,29 +61,13 @@ public class Taistelu {
 
         // Tarkistetaan selvisikö vihollinen, eli mennäänkö eteenpäin kohti
         // seuraavaa taistelua, vai iskeekö vihollinen takaisin.
-        if (vihollinen.getHp() < 1) {
-            this.voitot++;
-            this.pelaaja.setRaha(this.pelaaja.getRaha() + 2);
-            // Näytä voitot, mahdollinen matsien välinen tilanne.
-            this.gui.lopetaTaistelu();
-
-            if (voitot == 3 || voitot == 6 || voitot == 9) {
-                KauppaGUI avattavaKauppa = new KauppaGUI(this.pelaaja);
-                avattavaKauppa.run();
-            } else {
-                TaisteluGUI uusiTaisteluGUI = new TaisteluGUI(this.pelaaja,
-                        this.voitot);
-                uusiTaisteluGUI.run();
-            }
-
+        if (!selvisiko(vihollinen)) {
+            voitaTaistelu();
+            System.out.println("Selvisit tänne asti!");
         } else {
-
             //Vihollisen hyökkäys.
             int vihunIsku = arvoVihollisenHyokkays();
-            vihollinen.kaytaHyokkaysta(vihunIsku, pelaaja);
-            System.out.println("Vihu iskee"
-                    + vihollinen.getHyokkaykset().get(vihunIsku).getNimi()
-                    + pelaaja.getHp());
+            vihuIskee(vihunIsku);
 
             //Päivitetään infoboksin teksti.
             this.gui.kerroInfo("Sinä hyökkäsit vihollisesi kimppuun hyökkäyksellä "
@@ -95,17 +80,87 @@ public class Taistelu {
                     + pelaaja.getHp() + " elämää.");
 
             //Tarkistetaan, onko selvisikö pelaaja.
-            if (pelaaja.getHp() < 1) {
+            if (!selvisiko(pelaaja)) {
                 // Kerro pelin päättyneen ja palaa valikkoon.
-                this.gui.lopetaTaistelu();
-                AloitusGUI kayttoliittyma = new AloitusGUI();
-                SwingUtilities.invokeLater(kayttoliittyma);
+                haviaTaistelu();
             }
         }
-
         //Päivitetään HP.
         this.gui.paivitaHP();
+    }
+    
+    /**
+     *
+     * @param esine
+     * @throws IOException
+     */
+    public void kaytaEsine(Esine esine) throws IOException{
+        if (esine.getNimi().equals("Kofeiinia")){
+            esine.kayta(pelaaja);
+        } else {
+            esine.kayta(vihollinen);
+        }
+        
+        if (this.pelaaja.getEsineet().size() > 0){
+            this.pelaaja.getEsineet().remove(0);
+        }
+        
+        System.out.println("Käytit esinettä." + pelaaja.getHp());
 
+        if (!selvisiko(vihollinen)) {
+            voitaTaistelu();
+        } else {
+            //Vihollisen hyökkäys.
+            int vihunIsku = arvoVihollisenHyokkays();
+            vihuIskee(vihunIsku);
+
+            //Päivitetään infoboksin teksti.
+            this.gui.kerroInfo("Sinä käytit esinettä." + System.lineSeparator()
+                    + "Vihollinen hyökkäsi kimppusi hyökkäyksellä "
+                    + vihollinen.getHyokkaykset().get(vihunIsku).getNimi()
+                    + "." + System.lineSeparator() + "Sinulla on jäljellä "
+                    + pelaaja.getHp() + " elämää.");
+
+            //Tarkistetaan, onko selvisikö pelaaja.
+            if (!selvisiko(pelaaja)) {
+                // Kerro pelin päättyneen ja palaa valikkoon.
+                haviaTaistelu();
+            }
+        }
+        this.gui.paivitaEsine();
+        this.gui.paivitaHP();
+    }
+
+    private void vihuIskee(int vihunIsku) {
+        vihollinen.kaytaHyokkaysta(vihunIsku, pelaaja);
+        System.out.println("Vihu iskee"
+                + vihollinen.getHyokkaykset().get(vihunIsku).getNimi()
+                + pelaaja.getHp());
+    }
+
+    private boolean selvisiko(Hahmo hahmo) {
+        if (hahmo.getHp() < 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private void haviaTaistelu() {
+        this.gui.lopetaTaistelu();        
+        TulosIlmoittaja ti
+                = new TulosIlmoittaja("Hävisit taistelun. Pelisi päättyy.", this, false);
+        ti.run();
+    }
+
+    private void voitaTaistelu() throws IOException {
+        this.voitot++;
+        this.pelaaja.setRaha(this.pelaaja.getRaha() + 2);
+        // Näytä voitot, mahdollinen matsien välinen tilanne.
+        this.gui.lopetaTaistelu();
+        TulosIlmoittaja ti
+                = new TulosIlmoittaja("Voitit taistelun!", this, true);
+        ti.run();
     }
 
     private int arvoVihollisenHyokkays() {
