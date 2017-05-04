@@ -17,4 +17,4 @@ Päivä | Tunnit | Kuvaus
 26.04.2017 | 2h | Grafiikoita, esinelogiikkaa.
 27.04.2017 | 2h | Esinelogiikkaa, käyttöliittymän siistimistä.
 03.05.2017 | 1h | Bugien korjaamista.
-04.05.2017 | 1h | Bugien korjaamista, käyttöliittymän parantelua, testien parantelua.
+04.05.2017 | 3.5h | Bugien korjaamista, käyttöliittymän parantelua, testien parantelua. Loppusilaukset.
