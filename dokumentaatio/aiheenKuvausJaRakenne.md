@@ -19,5 +19,5 @@ on lisäksi Esine-olioita, joiden avulla voi vaikuttaa hahmoihin. Esineitä saa 
 Lisäksi pelissä on kohtuullinen joukko käyttöliittymäluokkia, sekä ActionListener-luokkia, jotka pyörittävät pelin käyttöliittymää.
 
 ![Alt text](https://github.com/ArttuNor/miscfiles/blob/master/clydepeliluokkakaavioFINAL.png "Luokkakaavio")
-![Alt text](https://github.com/ArttuNor/miscfiles/blob/master/clydepelisekvenssikaavio1.jpg "Sekvenssikaavio 1: Uuden pelin aloittaminen")
-![Alt text](https://github.com/ArttuNor/miscfiles/blob/master/clydepelisekvenssikaavio2.jpg "Sekvenssikaavio 2: Ohjeiden lukeminen")
+![Alt text](https://github.com/ArttuNor/miscfiles/blob/master/sekvenssikaavio_uusipeli.png "Sekvenssikaavio 1: Uuden pelin aloittaminen")
+![Alt text](https://github.com/ArttuNor/miscfiles/blob/master/sekvenssikaavio_ohjeet.png "Sekvenssikaavio 2: Ohjeiden lukeminen")
